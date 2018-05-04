@@ -6,9 +6,16 @@
 
 (defn api-routes [_]
   (api
-    {:swagger {:ui "/api-docs" :spec "/swagger.json"}}
+    {:swagger 
+     {:ui "/api-docs" 
+      :spec "/swagger.json"
+      :data {:info {:title "Clojurice"}
+             :tags [{:name "api" :description "Main API root"}]}}}
     
     (context "/api" []
+      :tags ["api"]
+
       (GET "/hello" []
         :return d/Message
+        :summary "Hello, world!"
         (ok {:message "Hello, world!"})))))
