@@ -1,0 +1,2 @@
+{:require [clojurice.app]
+ :compiler-options  {:asset-path "main.out"}}
