@@ -22,4 +22,4 @@ To build the project to an uberjar do:
 boot build <target-dir> 
 ```
 
-An uberjar called "clojurice-<version>-standalone.jar" will be found in the target director.
+An uberjar called "clojurice-(version)-standalone.jar" will be found in the target director.
