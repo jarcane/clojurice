@@ -52,7 +52,6 @@
      "run a restartable system"
      []
      (comp
-      (speak)
       (environ :env {:http-port "7000"})
       (watch :verbose true)
       (system :sys #'dev-system
@@ -62,7 +61,8 @@
             :host "127.0.0.1")
       (reload :asset-path "public")
       (cljs-repl)
-      (cljs :source-map true :optimizations :none)))
+      (cljs :source-map true :optimizations :none)
+      (notify :audible true :visual true)))
 
 (deftask build
   "Build the project locally as a JAR."
