@@ -23,3 +23,10 @@ boot build <target-dir>
 ```
 
 An uberjar called "clojurice-(version)-standalone.jar" will be found in the target director.
+
+## Development notes
+
+The main backend API can be found in `api.clj` and is written in [compojure-api](https://github.com/metosin/compojure-api).
+
+
+Both frontend and backend code have been configured to automatically reload on file changes, but note that the full backend server system will only be restarted completely when certain files change. This is configured through the `build.boot` dev task with the `:files` parameter to the `system` step.

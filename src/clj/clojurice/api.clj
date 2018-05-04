@@ -4,7 +4,7 @@
             [schema.core :as s]
             [clojurice.domain :as d]))
 
-(defn hello-routes [_]
+(defn api-routes [_]
   (api
     {:swagger {:ui "/api-docs" :spec "/swagger.json"}}
     

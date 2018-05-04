@@ -2,7 +2,7 @@
   (:require [com.stuartsierra.component :as component]
             [environ.core :refer [env]]
             [clojurice.routes :refer [site]]
-            [clojurice.api :refer [hello-routes]]
+            [clojurice.api :refer [api-routes]]
             [ring.middleware.format :refer [wrap-restful-format]]
             [ring.middleware.defaults :refer [wrap-defaults
                                               site-defaults
@@ -28,7 +28,7 @@
     (component/system-map
      :site-endpoint (component/using (new-endpoint site)
                                      [:site-middleware])
-     :api-endpoint (component/using (new-endpoint hello-routes)
+     :api-endpoint (component/using (new-endpoint api-routes)
                                     [:api-middleware])
      :site-middleware (new-middleware {:middleware [[wrap-defaults site-defaults]]})
      :api-middleware (new-middleware

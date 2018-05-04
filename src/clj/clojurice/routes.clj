@@ -1,7 +1,6 @@
 (ns clojurice.routes
   (:require [compojure.core :refer [routes GET ANY]]
             [compojure.route :refer [not-found]]
-            [clojurice.api :refer [hello-routes]]
             [ring.util.http-response :as response]))
 
 (defn ok-response [response]
