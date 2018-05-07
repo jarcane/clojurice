@@ -4,4 +4,4 @@
 (def init
   {:message nil})
 
-(defonce app-state (r/atom init))
+(def app-state (r/atom init))

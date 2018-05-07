@@ -3,7 +3,9 @@
 
 (set-env! :resource-paths #{"src/cljs" "src/cljc" "src/clj" "resources"}
           :dependencies   '[[org.clojure/clojure "1.9.0"]
-                            [org.clojure/clojurescript "1.9.946"]
+                            [org.clojure/clojurescript "1.10.238"]
+                            [org.clojure/core.async "0.4.474"]
+
                             [org.immutant/immutant "2.1.9"]
                             [org.danielsz/system "0.4.2-SNAPSHOT"]
                             [org.clojure/java.jdbc "0.7.3"]
@@ -20,11 +22,13 @@
                             [ring-middleware-format "0.7.2"]
                             [adzerk/boot-reload "0.5.2" :scope "test"]
                             [adzerk/boot-test "1.2.0" :scope "test"]
+                            [prismatic/schema "1.1.9"]
 
                             [reagent "0.8.0-alpha2"]
                             [reagi "0.10.1"]
                             [funcool/bide "1.6.0"]
                             [cljs-http "0.1.45"]
+                            [com.cognitect/transit-cljs "0.8.256"]
 
                             [adzerk/boot-reload "0.5.2" :scope "test"]
                             [adzerk/boot-test "1.2.0" :scope "test"]
