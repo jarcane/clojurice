@@ -20,9 +20,12 @@
                             [ring-middleware-format "0.7.2"]
                             [adzerk/boot-reload "0.5.2" :scope "test"]
                             [adzerk/boot-test "1.2.0" :scope "test"]
+
                             [reagent "0.8.0-alpha2"]
                             [reagi "0.10.1"]
                             [funcool/bide "1.6.0"]
+                            [cljs-http "0.1.45"]
+
                             [adzerk/boot-reload "0.5.2" :scope "test"]
                             [adzerk/boot-test "1.2.0" :scope "test"]
                             [adzerk/boot-cljs "2.1.4" :scope "test"]
