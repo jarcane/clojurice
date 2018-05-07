@@ -15,5 +15,5 @@
 (defn site [_]
   (routes
    (GET "/" [] (home-page))
-   (not-found "Not found")))
+   (ANY "*" [] (home-page))))
    
