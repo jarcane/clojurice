@@ -10,5 +10,5 @@
     [:nav.navbar
       [app-link :clojurice.home "Home"]
       [app-link :clojurice.about "About"]]
-    (apply dispatch-view key params)])
+    (dispatch-view key params)])
 
