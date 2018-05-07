@@ -35,13 +35,15 @@
                             [adzerk/boot-reload "0.5.2" :scope "test"]
                             [com.cemerick/piggieback "0.2.1" :scope "test"]
                             [binaryage/devtools "0.9.4" :scope "test"]
-                            [weasel "0.7.0" :scope "test"]])
+                            [weasel "0.7.0" :scope "test"]
+                            [deraen/boot-sass  "0.3.1" :scope "test"]])
 
 (require '[system.boot :refer [system run]]
          '[clojurice.systems :refer [dev-system]]
          '[clojure.edn :as edn]
          '[environ.core :refer [env]]
-         '[environ.boot :refer [environ]])
+         '[environ.boot :refer [environ]]
+         '[deraen.boot-sass :refer [sass]])
 
 (require '[adzerk.boot-cljs :refer :all]
          '[adzerk.boot-cljs-repl :refer :all]
@@ -66,6 +68,7 @@
       (reload :asset-path "public")
       (cljs-repl)
       (cljs :source-map true :optimizations :none)
+      (sass)
       (notify :audible true :visual true)))
 
 (deftask build
