@@ -14,9 +14,9 @@
 (defn GET [uri schema params]
   (go 
     (let [resp (<! (http/get uri params))]
-      (js/console.log (pr-str resp))
-      (when (ok? resp)
-        (s/validate schema (:body resp))))))
+      (if (ok? resp)
+        (s/validate schema (:body resp))
+        (js/console.log (str "Error on request " uri ": " resp))))))
 
 (defn get-hello! []
   (go (swap! app-state merge (<! (GET "/api/hello" d/Message {})))))
