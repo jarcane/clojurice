@@ -12,9 +12,9 @@
                  (map (fn [[x y]] [y x]))
                  (into []))))
 
-(defn app-link [target text]
+(defn app-link [target text params]
   [:a {:href (target routes)
        :on-click (fn [e]
                    (.preventDefault e)
-                   (b/navigate! router target))}
+                   (b/navigate! router target params))}
    text])
