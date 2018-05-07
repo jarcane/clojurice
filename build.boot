@@ -20,12 +20,9 @@
                             [org.clojure/tools.nrepl "0.2.12"]
                             [ring/ring-defaults "0.3.1"]
                             [ring-middleware-format "0.7.2"]
-                            [adzerk/boot-reload "0.5.2" :scope "test"]
-                            [adzerk/boot-test "1.2.0" :scope "test"]
                             [prismatic/schema "1.1.9"]
 
-                            [reagent "0.8.0-alpha2"]
-                            [reagi "0.10.1"]
+                            [reagent "0.8.0"]
                             [funcool/bide "1.6.0"]
                             [cljs-http "0.1.45"]
                             [com.cognitect/transit-cljs "0.8.256"]

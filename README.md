@@ -45,4 +45,6 @@ An important note regarding routing: when linking to another component within th
 
 ### Hot Reloading
 
-Both frontend and backend code have been configured to automatically reload on file changes, but note that the full backend server system will only be restarted completely when certain files change. This is configured through the `build.boot` dev task with the `:files` parameter to the `system` step.
+Both frontend and backend code have been configured to automatically reload on file changes. There's even a helpful audio cue to notify you once a rebuild is done.
+
+Note that the full backend server system will only be restarted completely when certain files change. This is configured through the `build.boot` dev task with the `:files` parameter to the `system` step.
