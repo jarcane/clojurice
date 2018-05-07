@@ -1,7 +1,6 @@
 (ns clojurice.router
   (:require [reagent.core :as r]
-            [bide.core :as b]
-            [clojurice.index :as index]))
+            [bide.core :as b]))
 
 (def routes
   {:clojurice.home "/home"
