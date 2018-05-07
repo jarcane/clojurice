@@ -1,7 +1,6 @@
 (ns clojurice.app
   (:require [reagent.core :as r]
             [bide.core :as b]
-            [clojurice.ui :refer [home-page about-page]]
             [clojurice.router :as router]
             [clojurice.index :as index]))
 
