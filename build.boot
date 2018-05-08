@@ -52,7 +52,9 @@
 (task-options!
  aot {:namespace   #{'clojurice.core}}
  jar {:main        'clojurice.core
-      :file        (str "clojurice-" version "-standalone.jar")})
+      :file        (str "clojurice-" version "-standalone.jar")}
+ pom {:project project
+      :version version})
 
 (deftask dev
      "run a restartable system"
@@ -75,7 +77,14 @@
   "Build the project locally as a JAR."
   [d dir PATH #{str} "the set of directories to write to (target)."]
   (let [dir (if (seq dir) dir #{"target"})]
-    (comp (aot) (pom) (uber) (jar) (target :dir dir))))
+    (comp 
+      (aot) 
+      (cljs :optimizations :advanced)
+      (sass)
+      (pom) 
+      (uber)
+      (jar) 
+      (target :dir dir))))
 
 (deftask run-project
   "Run the project."
