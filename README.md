@@ -22,7 +22,7 @@ To build the project to an uberjar do:
 boot build <target-dir> 
 ```
 
-An uberjar called "clojurice-(version)-standalone.jar" will be found in the target director. The project version number can be set in `build.boot`.
+An uberjar called "clojurice-(version)-standalone.jar" will be found in the target directory. The project version number can be set in `build.boot`.
 
 ## Development notes
 
@@ -58,3 +58,11 @@ If you are not using Chrome Canary, you will also want to turn on custom formatt
 Both frontend and backend code have been configured to automatically reload on file changes. There's even a helpful audio cue to notify you once a rebuild is done.
 
 Note that the full backend server system will only be restarted completely when certain files change. This is configured through the `build.boot` dev task with the `:files` parameter to the `system` step.
+
+## Credits and License
+
+This app is based originally on [system-template](https://github.com/shakdwipeea/system-template) with some further guidance from [tenzing](https://github.com/martinklepsch/tenzing).
+
+Development has been made possible by [Futurice](http://www.futurice.com/).
+
+The code is distributed under the Eclipse Public License v1.0 or any later version. For more information see `LICENSE` in the root directory.
