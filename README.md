@@ -43,6 +43,16 @@ Main app state is kept in a shared reagent atom at `clojurice.state/app-state`. 
 
 An important note regarding routing: when linking to another component within the app, it is best to use the `clojurice.router/app-link` function as this hooks into the routing system. Normal hrefs will work, but force a page reload, which will be slower and also reset app-state.
 
+### Dev tools
+
+The default configuration will open nREPL connections to both frontend and backend, each on their own port. Check the console logs from `boot dev` to find them.
+
+The frontend environment also wraps [cljs-devtools](https://github.com/binaryage/cljs-devtools) and [Dirac](https://github.com/binaryage/dirac) for a more pleasant browser environment for Chrome. 
+
+Dirac allows for a CLJS REPL in a Chrome devtools window, but requires some additional setup. You'll need to set up the Dirac extension with Chrome Canary, as described [here](https://github.com/binaryage/dirac/blob/master/docs/installation.md#setup-dirac-chrome-extension). The remaining setup (installing the runtime, nREPL, and agent) is handled automatically by boot.
+
+If you are not using Chrome Canary, you will also want to turn on custom formatters in the Chrome Devtools for the cljs-devtools formatters to work.
+
 ### Hot Reloading
 
 Both frontend and backend code have been configured to automatically reload on file changes. There's even a helpful audio cue to notify you once a rebuild is done.

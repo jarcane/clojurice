@@ -17,7 +17,7 @@
                             [environ "1.1.0"]
                             [boot-environ "1.1.0"]
                             [ring "1.6.3"]
-                            [org.clojure/tools.nrepl "0.2.12"]
+                            [org.clojure/tools.nrepl "0.2.13"]
                             [ring/ring-defaults "0.3.1"]
                             [ring-middleware-format "0.7.2"]
                             [prismatic/schema "1.1.9"]
@@ -26,6 +26,10 @@
                             [funcool/bide "1.6.0"]
                             [cljs-http "0.1.45"]
                             [com.cognitect/transit-cljs "0.8.256"]
+
+                            [binaryage/devtools "0.9.10"]
+                            [binaryage/dirac "1.2.33"]
+                            [powerlaces/boot-cljs-devtools "0.2.0"]
 
                             [adzerk/boot-reload "0.5.2" :scope "test"]
                             [adzerk/boot-test "1.2.0" :scope "test"]
@@ -43,7 +47,8 @@
          '[clojure.edn :as edn]
          '[environ.core :refer [env]]
          '[environ.boot :refer [environ]]
-         '[deraen.boot-sass :refer [sass]])
+         '[deraen.boot-sass :refer [sass]]
+         '[powerlaces.boot-cljs-devtools :refer [cljs-devtools dirac]])
 
 (require '[adzerk.boot-cljs :refer :all]
          '[adzerk.boot-cljs-repl :refer :all]
@@ -69,6 +74,8 @@
             :host "127.0.0.1")
       (reload :asset-path "public")
       (cljs-repl)
+      (cljs-devtools)
+      (dirac)
       (cljs :source-map true :optimizations :none)
       (sass)
       (notify :audible true :visual true)))
