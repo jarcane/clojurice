@@ -41,6 +41,4 @@
 (defn prod-system
   "Assembles and returns components for a production deployment"
   []
-  (merge (dev-system)
-         (component/system-map
-          :repl-server (new-repl-server (read-string (env :repl-port))))))
+  (dev-system))
