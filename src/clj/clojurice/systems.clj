@@ -26,18 +26,18 @@
                          :response-options {:json-kw {:pretty true}})))
 
 (defn build-system [conf]
-    (component/system-map
-     :site-endpoint (component/using (new-endpoint site)
-                                     [:site-middleware])
-     :api-endpoint (component/using (new-endpoint api-routes)
-                                    [:api-middleware])
-     :site-middleware (new-middleware {:middleware [[wrap-defaults site-defaults]]})
-     :api-middleware (new-middleware
-                      {:middleware  [rest-middleware
-                                     [wrap-defaults api-defaults]]})
-     :handler (component/using (new-handler) [:api-endpoint :site-endpoint])
-     :api-server (component/using (new-immutant-web :port (or #_ (Integer. (env :http-port)) (:http-port conf)))
-                                  [:handler])))
+  (component/system-map
+    :site-endpoint (component/using (new-endpoint site)
+                                    [:site-middleware])
+    :api-endpoint (component/using (new-endpoint api-routes)
+                                  [:api-middleware])
+    :site-middleware (new-middleware {:middleware [[wrap-defaults site-defaults]]})
+    :api-middleware (new-middleware
+                    {:middleware  [rest-middleware
+                                    [wrap-defaults api-defaults]]})
+    :handler (component/using (new-handler) [:api-endpoint :site-endpoint])
+    :api-server (component/using (new-immutant-web :port (or #_ (Integer. (env :http-port)) (:http-port conf)))
+                                [:handler])))
 
 (defn dev-system []
   (build-system config/dev))
