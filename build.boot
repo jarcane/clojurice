@@ -14,8 +14,6 @@
                             [metosin/ring-http-response "0.9.0"]
                             [compojure "1.6.0"]
                             [metosin/compojure-api "1.1.11"]
-                            [environ "1.1.0"]
-                            [boot-environ "1.1.0"]
                             [ring "1.6.3"]
                             [org.clojure/tools.nrepl "0.2.13"]
                             [ring/ring-defaults "0.3.1"]
@@ -45,8 +43,6 @@
 (require '[system.boot :refer [system run]]
          '[clojurice.systems :refer [dev-system]]
          '[clojure.edn :as edn]
-         '[environ.core :refer [env]]
-         '[environ.boot :refer [environ]]
          '[deraen.boot-sass :refer [sass]]
          '[powerlaces.boot-cljs-devtools :refer [cljs-devtools dirac]])
 
@@ -65,7 +61,6 @@
      "run a restartable system"
      []
      (comp
-      (environ)
       (watch :verbose true)
       (system :sys #'dev-system
               :auto true

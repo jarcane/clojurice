@@ -1,6 +1,5 @@
 (ns clojurice.systems
   (:require [com.stuartsierra.component :as component]
-            [environ.core :refer [env]]
             [clojurice.routes :refer [site]]
             [clojurice.api :refer [api-routes]]
             [clojurice.config :as config]
@@ -30,14 +29,14 @@
     :site-endpoint (component/using (new-endpoint site)
                                     [:site-middleware])
     :api-endpoint (component/using (new-endpoint api-routes)
-                                  [:api-middleware])
+                                   [:api-middleware])
     :site-middleware (new-middleware {:middleware [[wrap-defaults site-defaults]]})
     :api-middleware (new-middleware
-                    {:middleware  [rest-middleware
+                     {:middleware [rest-middleware
                                     [wrap-defaults api-defaults]]})
     :handler (component/using (new-handler) [:api-endpoint :site-endpoint])
-    :api-server (component/using (new-immutant-web :port (or #_ (Integer. (env :http-port)) (:http-port conf)))
-                                [:handler])))
+    :api-server (component/using (new-immutant-web :port (:http-port conf))
+                                 [:handler])))
 
 (defn dev-system []
   (build-system config/dev))

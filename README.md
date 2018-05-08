@@ -26,9 +26,7 @@ An uberjar called "clojurice-(version)-standalone.jar" will be found in the targ
 
 ## Configuration
 
-Configuration is handled via two things: `config.cljc` and the `environ` library. `config.cljc` defines a namespace, `clojurice.config` available to both front-end and backend, and provides a base, dev, and prod profile, with the latter two being derived from base. The config is a simple map.
-
-`environ` is still available however for supplementing those configurations in the files with environment variables. Where appropriate, environ variables override any conflicting definition in the files. So if `HTTP_PORT` is set,it will override the `:http-port` value defined in `config.cljc`.
+Configuration is handled via `config.cljc`. `config.cljc` defines a namespace, `clojurice.config` available to both front-end and backend, and provides a base, dev, and prod profile, with the latter two being derived from base. The config is a simple map.
 
 ## Development notes
 
