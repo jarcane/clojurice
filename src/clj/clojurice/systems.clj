@@ -3,6 +3,7 @@
             [environ.core :refer [env]]
             [clojurice.routes :refer [site]]
             [clojurice.api :refer [api-routes]]
+            [clojurice.config :as config]
             [ring.middleware.format :refer [wrap-restful-format]]
             [ring.middleware.defaults :refer [wrap-defaults
                                               site-defaults
@@ -24,7 +25,7 @@
                          :formats [:json-kw]
                          :response-options {:json-kw {:pretty true}})))
 
-(defn dev-system []
+(defn build-system [conf]
     (component/system-map
      :site-endpoint (component/using (new-endpoint site)
                                      [:site-middleware])
@@ -35,10 +36,13 @@
                       {:middleware  [rest-middleware
                                      [wrap-defaults api-defaults]]})
      :handler (component/using (new-handler) [:api-endpoint :site-endpoint])
-     :api-server (component/using (new-immutant-web :port (Integer. (env :http-port)))
+     :api-server (component/using (new-immutant-web :port (or #_ (Integer. (env :http-port)) (:http-port conf)))
                                   [:handler])))
+
+(defn dev-system []
+  (build-system config/dev))
 
 (defn prod-system
   "Assembles and returns components for a production deployment"
   []
-  (dev-system))
+  (build-system config/prod))

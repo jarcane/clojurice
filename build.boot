@@ -65,7 +65,7 @@
      "run a restartable system"
      []
      (comp
-      (environ :env {:http-port "7000"})
+      (environ)
       (watch :verbose true)
       (system :sys #'dev-system
               :auto true
