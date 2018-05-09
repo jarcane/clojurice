@@ -32,7 +32,7 @@ Configuration is handled via `config.cljc`. `config.cljc` defines a namespace, `
 
 ### Backend 
 
-The main backend API can be found in `api.clj` and is written in [compojure-api](https://github.com/metosin/compojure-api).
+The main backend API can be found in `api.clj` and is written in [compojure-api](https://github.com/metosin/compojure-api). There is also a [tutorial](https://github.com/metosin/compojure-api/wiki/Tutorial) on working with compojure-api syntax. 
 
 ### Frontend
 
