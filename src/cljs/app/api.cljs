@@ -1,11 +1,11 @@
-(ns clojurice.api
+(ns app.api
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [reagent.core :as r]
             [cljs.core.async :refer [<!]]
             [cljs-http.client :as http]
-            [clojurice.domain :as d]
+            [app.domain :as d]
             [schema.core :as s :include-macros true]
-            [clojurice.state :refer [app-state]]))
+            [app.state :refer [app-state]]))
 
             
 (defn ok? [resp]

@@ -1,4 +1,4 @@
-(ns clojurice.domain
+(ns app.domain
   (:require [schema.core :as s :include-macros true]))
 
 (def Message

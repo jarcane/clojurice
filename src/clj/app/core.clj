@@ -1,7 +1,7 @@
-(ns clojurice.core
+(ns app.core
   (:gen-class)
   (:require [system.repl :refer [set-init! start]]
-            [clojurice.systems :as system]))
+            [app.systems :as system]))
 
 (defn -main
   "I don't do a whole lot ... yet."

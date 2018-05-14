@@ -1,4 +1,4 @@
-(ns clojurice.views.dispatch
+(ns app.views.dispatch
   (:require [reagent.core :as r]))
 
 (defmulti dispatch-view (fn [key params] key))

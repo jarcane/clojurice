@@ -1,10 +1,10 @@
-(ns clojurice.router
+(ns app.router
   (:require [reagent.core :as r]
             [bide.core :as b]))
 
 (def routes
-  {:clojurice.home "/home"
-   :clojurice.about "/about"})   
+  {:app.home "/home"
+   :app.about "/about"})   
             
 (def router
   (b/router (->> routes

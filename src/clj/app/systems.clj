@@ -1,8 +1,8 @@
-(ns clojurice.systems
+(ns app.systems
   (:require [com.stuartsierra.component :as component]
-            [clojurice.routes :refer [site]]
-            [clojurice.api :refer [api-routes]]
-            [clojurice.config :as config]
+            [app.routes :refer [site]]
+            [app.api :refer [api-routes]]
+            [app.config :as config]
             [ring.middleware.format :refer [wrap-restful-format]]
             [ring.middleware.defaults :refer [wrap-defaults
                                               site-defaults
@@ -26,10 +26,11 @@
 
 (defn build-system [conf]
   (component/system-map
+    :config conf
     :site-endpoint (component/using (new-endpoint site)
-                                    [:site-middleware])
+                                    [:site-middleware :config])
     :api-endpoint (component/using (new-endpoint api-routes)
-                                   [:api-middleware])
+                                   [:api-middleware :config])
     :site-middleware (new-middleware {:middleware [[wrap-defaults site-defaults]]})
     :api-middleware (new-middleware
                      {:middleware [rest-middleware

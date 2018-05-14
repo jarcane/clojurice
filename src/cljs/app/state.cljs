@@ -1,4 +1,4 @@
-(ns clojurice.state
+(ns app.state
   (:require [reagent.core :as r]))
 
 (def init

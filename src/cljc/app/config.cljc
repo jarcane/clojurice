@@ -1,11 +1,12 @@
-(ns clojurice.config)
+(ns app.config)
 
 (def base
-  {:http-port 7000})
+  {:name "My App"
+   :http-port 7000})
 
 (def dev
   (merge base
-    {}))
+    {:name "My App (DEV)"}))
 
 (def prod
   (merge base 

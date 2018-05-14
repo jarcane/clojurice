@@ -1,4 +1,4 @@
-(def project 'clojurice)
+(def project 'app)
 (def version "0.1.0-SNAPSHOT")
 
 (set-env! :resource-paths #{"src/cljs" "src/cljc" "src/clj" "resources"}
@@ -19,6 +19,8 @@
                             [ring/ring-defaults "0.3.1"]
                             [ring-middleware-format "0.7.2"]
                             [prismatic/schema "1.1.9"]
+                            
+                            [hiccup "1.0.5"]
 
                             [reagent "0.8.0"]
                             [funcool/bide "1.6.0"]
@@ -41,7 +43,7 @@
                             [deraen/boot-sass  "0.3.1" :scope "test"]])
 
 (require '[system.boot :refer [system run]]
-         '[clojurice.systems :refer [dev-system]]
+         '[app.systems :refer [dev-system]]
          '[clojure.edn :as edn]
          '[deraen.boot-sass :refer [sass]]
          '[powerlaces.boot-cljs-devtools :refer [cljs-devtools dirac]])
@@ -51,9 +53,9 @@
          '[adzerk.boot-reload :refer :all])
 
 (task-options!
- aot {:namespace   #{'clojurice.core}}
- jar {:main        'clojurice.core
-      :file        (str "clojurice-" version "-standalone.jar")}
+ aot {:namespace   #{'app.core}}
+ jar {:main        'app.core
+      :file        (str "app-" version "-standalone.jar")}
  pom {:project project
       :version version})
 
@@ -64,7 +66,7 @@
       (watch :verbose true)
       (system :sys #'dev-system
               :auto true
-              :files ["routes.clj" "systems.clj" "api.clj"])
+              :files ["routes.clj" "systems.clj" "api.clj" "config.cljc"])
       (repl :server true
             :host "127.0.0.1")
       (reload :asset-path "public")

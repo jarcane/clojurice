@@ -1,8 +1,8 @@
-(ns clojurice.app
+(ns app.app
   (:require [reagent.core :as r]
             [bide.core :as b]
-            [clojurice.router :as router]
-            [clojurice.index :as index]))
+            [app.router :as router]
+            [app.index :as index]))
 
 (enable-console-print!)
 
@@ -15,7 +15,7 @@
 
 (defn ^:export run []
   (b/start! router/router 
-    {:default :clojurice.home
+    {:default :app.home
      :html5? true
      :on-navigate on-navigate}))
      

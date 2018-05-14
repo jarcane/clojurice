@@ -1,15 +1,15 @@
-(ns clojurice.api
+(ns app.api
   (:require [compojure.api.sweet :refer :all]
             [ring.util.http-response :refer :all]
             [schema.core :as s]
-            [clojurice.domain :as d]))
+            [app.domain :as d]))
 
-(defn api-routes [_]
+(defn api-routes [sys]
   (api
     {:swagger 
      {:ui "/api-docs" 
       :spec "/swagger.json"
-      :data {:info {:title "Clojurice"}
+      :data {:info {:title "app"}
              :tags [{:name "api" :description "Main API root"}]}}}
     
     (context "/api" []
