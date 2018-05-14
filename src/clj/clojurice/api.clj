@@ -15,6 +15,11 @@
     (context "/api" []
       :tags ["api"]
 
+      (GET "/health" []
+        :return s/Str
+        :summary "A simple health check"
+        (ok "OK"))
+
       (GET "/hello" []
         :return d/Message
         :summary "Hello, world!"
