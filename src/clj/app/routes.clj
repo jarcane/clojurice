@@ -10,7 +10,7 @@
 
 (defn index-page [sys]
   (-> (response/ok (index sys))
-      (response/header "Content-Type" "text/html")))
+      (response/header "Content-Type" "text/html; charset=UTF-8")))
 
 (defn site [sys]
   (routes

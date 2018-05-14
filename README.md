@@ -34,6 +34,10 @@ Configuration is handled via `config.cljc`. `config.cljc` defines a namespace, `
 
 The main backend API can be found in `api.clj` and is written in [compojure-api](https://github.com/metosin/compojure-api). There is also a [tutorial](https://github.com/metosin/compojure-api/wiki/Tutorial) on working with compojure-api syntax. 
 
+Dependency injection and system component handling is handled via [system](https://github.com/danielsz/system) and the Raamwerk model. This is what enables live reloading of the backend, but also orchestrates all the components of the app (static and API servers, config, DB, etc.). The main constructors for these are found in `app.systems`. There is a base `build-system` function which takes a config from `config.cljc` and produces the base system map for that profile, and then functions that produce the prod and dev systems.
+
+Of most important note is the `:site-endpoint`, which is the component that handles static routes like the main index and points to `app.routes/site`, and `:api-endpoint`, which is the component for the REST API, and points to `app.api/api-routes`. Each of these functions takes a single argument, which is a subset of the system map, containing the keys listed as dependencies in the vector passed to `component/using`. So in order for a component to be available to the end-point, its key needs to be added to this vector.
+
 ### Frontend
 
 The frontend design is based around a combination of multimethod dispatch for rendering each view, and client-side routing with [bide](https://github.com/funcool/bide). As such, adding a new sub-view requires a few steps that are important to remember:
