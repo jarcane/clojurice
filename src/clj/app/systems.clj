@@ -27,10 +27,11 @@
 (defn build-system [conf]
   (component/system-map
     :config conf
+    :db (new-postgres-database (:db conf))
     :site-endpoint (component/using (new-endpoint site)
                                     [:site-middleware :config])
     :api-endpoint (component/using (new-endpoint api-routes)
-                                   [:api-middleware :config])
+                                   [:api-middleware :config :db])
     :site-middleware (new-middleware {:middleware [[wrap-defaults site-defaults]]})
     :api-middleware (new-middleware
                      {:middleware [rest-middleware

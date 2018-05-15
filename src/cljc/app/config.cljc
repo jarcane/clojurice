@@ -2,7 +2,13 @@
 
 (def base
   {:name "My App"
-   :http-port 7000})
+   :http-port 7000
+   :db {:classname   "org.postgresql.Driver" ; must be in classpath
+        :subprotocol "postgresql"
+        :subname ""
+        :user     "postgres"
+        :password "postgres"
+        :host "127.0.0.1"}})
 
 (def dev
   (merge base
@@ -10,4 +16,8 @@
 
 (def prod
   (merge base 
-    {:http-port 8080}))
+    {:http-port 8080
+     :db (merge (:db base) {:user "clojurice"
+                            :password "ReA1!yS3cUr3Pa55W0rD"
+                            :host "some-long-string.clojurice.net"})}))
+                            

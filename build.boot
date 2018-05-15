@@ -19,8 +19,8 @@
                             [ring/ring-defaults "0.3.1"]
                             [ring-middleware-format "0.7.2"]
                             [prismatic/schema "1.1.9"]
-                            
                             [hiccup "1.0.5"]
+                            [org.postgresql/postgresql "42.2.2"]
 
                             [reagent "0.8.0"]
                             [funcool/bide "1.6.0"]
