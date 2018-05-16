@@ -3,12 +3,14 @@
 (def base
   {:name "My App"
    :http-port 7000
-   :db {:classname   "org.postgresql.Driver" ; must be in classpath
-        :subprotocol "postgresql"
-        :subname ""
-        :user     "postgres"
-        :password "postgres"
-        :host "127.0.0.1"}})
+   :db {:classname    "org.postgresql.Driver" ; must be in classpath
+        :subprotocol  "postgresql"
+        :subname      ""
+        :user         "postgres"
+        :password     "postgres"
+        :host         "127.0.0.1"
+        :port         "5432"
+        :dbname       "app"}})
 
 (def dev
   (merge base

@@ -4,7 +4,9 @@ A base template for full-stack web applications in Clojure
 
 ## Requirements
 
-You will need [Boot](http://boot-clj.com/) installed, as well as Java of at least version 1.6+ (1.8+ is recommended).
+You will need [Boot](http://boot-clj.com/) installed, as well as Java 1.8+ is recommended, and PostgreSQL 9.6+.
+
+The default configuration expects a running PGSQL server with user/password "postgres" containing a database called "app", though these settings can be configured in the `config.cljc` file.
 
 ## Instructions
 
@@ -37,6 +39,8 @@ The main backend API can be found in `api.clj` and is written in [compojure-api]
 Dependency injection and system component handling is handled via [system](https://github.com/danielsz/system) and the Raamwerk model. This is what enables live reloading of the backend, but also orchestrates all the components of the app (static and API servers, config, DB, etc.). The main constructors for these are found in `app.systems`. There is a base `build-system` function which takes a config from `config.cljc` and produces the base system map for that profile, and then functions that produce the prod and dev systems.
 
 Of most important note is the `:site-endpoint`, which is the component that handles static routes like the main index and points to `app.routes/site`, and `:api-endpoint`, which is the component for the REST API, and points to `app.api/api-routes`. Each of these functions takes a single argument (called `sys` by convention), which is a subset of the system map, containing the keys listed as dependencies in the vector passed to `component/using`. So in order for a component to be available to the end-point, its key needs to be added to this vector.
+
+Database migrations are handled with a custom [Flyway](https://flywaydb.org/) component, configured to automatically run on server start or reload. Migrations are located in `resources/db/migrations`, which contains `.sql` files for migrations, named according to the scheme described in the [Flyway documentation](https://flywaydb.org/documentation/migrations#sql-based-migrations).
 
 ### Frontend
 

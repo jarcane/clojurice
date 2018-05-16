@@ -3,6 +3,7 @@
             [app.routes :refer [site]]
             [app.api :refer [api-routes]]
             [app.config :as config]
+            [app.migration :refer [new-migrations]]
             [ring.middleware.format :refer [wrap-restful-format]]
             [ring.middleware.defaults :refer [wrap-defaults
                                               site-defaults
@@ -28,6 +29,7 @@
   (component/system-map
     :config conf
     :db (new-postgres-database (:db conf))
+    :flyway (new-migrations (:db conf))
     :site-endpoint (component/using (new-endpoint site)
                                     [:site-middleware :config])
     :api-endpoint (component/using (new-endpoint api-routes)

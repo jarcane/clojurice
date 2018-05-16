@@ -21,6 +21,7 @@
                             [prismatic/schema "1.1.9"]
                             [hiccup "1.0.5"]
                             [org.postgresql/postgresql "42.2.2"]
+                            [org.flywaydb/flyway-core "5.0.7"]
 
                             [reagent "0.8.0"]
                             [funcool/bide "1.6.0"]
