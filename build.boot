@@ -22,6 +22,7 @@
                             [hiccup "1.0.5"]
                             [org.postgresql/postgresql "42.2.2"]
                             [org.flywaydb/flyway-core "5.0.7"]
+                            [honeysql "0.9.2"]
 
                             [reagent "0.8.0"]
                             [funcool/bide "1.6.0"]
@@ -67,7 +68,7 @@
       (watch :verbose true)
       (system :sys #'dev-system
               :auto true
-              :files ["routes.clj" "systems.clj" "api.clj" "config.cljc"])
+              :files ["routes.clj" "systems.clj" "api.clj" "query.clj" "config.cljc"])
       (repl :server true
             :host "127.0.0.1")
       (reload :asset-path "public")

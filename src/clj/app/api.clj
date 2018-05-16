@@ -2,7 +2,8 @@
   (:require [compojure.api.sweet :refer :all]
             [ring.util.http-response :refer :all]
             [schema.core :as s]
-            [app.domain :as d]))
+            [app.domain :as d]
+            [app.query :as q]))
 
 (defn api-routes [sys]
   (api
@@ -23,4 +24,4 @@
       (GET "/hello" []
         :return d/Message
         :summary "Hello, world!"
-        (ok {:message "Hello, world!"})))))
+        (ok (q/get-hello sys))))))

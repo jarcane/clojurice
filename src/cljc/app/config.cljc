@@ -5,7 +5,7 @@
    :http-port 7000
    :db {:classname    "org.postgresql.Driver" ; must be in classpath
         :subprotocol  "postgresql"
-        :subname      ""
+        :subname      "//localhost/app"
         :user         "postgres"
         :password     "postgres"
         :host         "127.0.0.1"
