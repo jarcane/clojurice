@@ -40,7 +40,7 @@ Dependency injection and system component handling is handled via [system](https
 
 Of most important note is the `:site-endpoint`, which is the component that handles static routes like the main index and points to `app.routes/site`, and `:api-endpoint`, which is the component for the REST API, and points to `app.api/api-routes`. Each of these functions takes a single argument (called `sys` by convention), which is a subset of the system map, containing the keys listed as dependencies in the vector passed to `component/using`. So in order for a component to be available to the end-point, its key needs to be added to this vector.
 
-Database migrations are handled with a custom [Flyway](https://flywaydb.org/) component, configured to automatically run on server start or reload. Migrations are located in `resources/db/migrations`, which contains `.sql` files for migrations, named according to the scheme described in the [Flyway documentation](https://flywaydb.org/documentation/migrations#sql-based-migrations).
+Database migrations are handled with a custom [Flyway](https://flywaydb.org/) component, configured to automatically run on server start or reload. Migrations are located in `resources/db/migrations`, which contains `.sql` files for migrations, named according to the scheme described in the [Flyway documentation](https://flywaydb.org/documentation/migrations#sql-based-migrations). The `Flyway` object is available from the system-map as `:flyway` and can thus be called from the REPL or from any component that inherits it as a dependency. This is useful for rolling back migrations in test, etc.
 
 ### Frontend
 
