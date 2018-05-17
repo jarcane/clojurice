@@ -2,3 +2,4 @@ Leiningen.gitignore
 .nrepl-port
 target/
 out/
+.vscode/

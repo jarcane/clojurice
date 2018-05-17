@@ -1,4 +1,6 @@
 {:http-port 8080
- :db {:user "clojurice"
+ :db {:user     "clojurice"
       :password "ReA1!yS3cUr3Pa55W0rD"
-      :host "some-long-string.clojurice.net"}}
+      :host     "some-long-string.clojurice.net"
+      :subname  "//some-long-string.clojurice.net/app"
+      :port     "5432"}}

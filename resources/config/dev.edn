@@ -1,1 +1,6 @@
-{:name "My App (DEV)"}
+{:name "My App (DEV)"
+ :db {:subname      "//localhost/app"
+      :user         "postgres"
+      :password     "postgres"
+      :host         "127.0.0.1"
+      :port         "5432"}}
