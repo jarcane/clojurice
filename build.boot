@@ -19,6 +19,7 @@
                             [ring/ring-defaults "0.3.1"]
                             [ring-middleware-format "0.7.2"]
                             [prismatic/schema "1.1.9"]
+                            [metosin/schema-tools "0.10.2"]
                             [hiccup "1.0.5"]
                             [org.postgresql/postgresql "42.2.2"]
                             [org.flywaydb/flyway-core "5.0.7"]
@@ -68,7 +69,7 @@
       (watch :verbose true)
       (system :sys #'dev-system
               :auto true
-              :files ["routes.clj" "systems.clj" "api.clj" "query.clj" "config.cljc"])
+              :files ["routes.clj" "systems.clj" "api.clj" "query.clj"])
       (repl :server true
             :host "127.0.0.1")
       (reload :asset-path "public")

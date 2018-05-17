@@ -18,5 +18,8 @@
         (s/validate schema (:body resp))
         (js/console.log (str "Error on request " uri ": " resp))))))
 
+(defn get-config! []
+  (go (swap! app-state assoc :config (<! (GET "/api/config" d/FrontendConfig {})))))
+
 (defn get-hello! []
   (go (swap! app-state merge (<! (GET "/api/hello" d/Message {})))))

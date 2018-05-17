@@ -2,6 +2,7 @@
   (:require [compojure.api.sweet :refer :all]
             [ring.util.http-response :refer :all]
             [schema.core :as s]
+            [schema-tools.core :as st]
             [app.domain :as d]
             [app.query :as q]))
 
@@ -20,6 +21,13 @@
         :return s/Str
         :summary "A simple health check"
         (ok "OK"))
+
+      (GET "/config" []
+        :return d/FrontendConfig
+        :summary "Provide frontend configuration information"
+        (ok (-> (:config sys)
+                (st/select-schema d/FrontendConfig))))
+
 
       (GET "/hello" []
         :return d/Message

@@ -2,6 +2,7 @@
   (:require [reagent.core :as r]))
 
 (def init
-  {:message nil})
+  {:message nil
+   :config {}})
 
 (def app-state (r/atom init))

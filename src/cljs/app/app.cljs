@@ -2,7 +2,8 @@
   (:require [reagent.core :as r]
             [bide.core :as b]
             [app.router :as router]
-            [app.index :as index]))
+            [app.index :as index]
+            [app.api :as api]))
 
 (enable-console-print!)
 
@@ -20,4 +21,4 @@
      :on-navigate on-navigate}))
      
 (run)
-
+(api/get-config!)

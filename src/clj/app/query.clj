@@ -1,6 +1,5 @@
 (ns app.query
   (:require [honeysql.core :as sql]
-            [honeysql.helpers :refer :all :as helpers]
             [clojure.java.jdbc :as jdbc]))
 
 (defn make-query [{:keys [db] :as sys} sqlmap]

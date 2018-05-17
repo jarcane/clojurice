@@ -43,9 +43,9 @@
                                  [:handler])))
 
 (defn dev-system []
-  (build-system config/dev))
+  (build-system (config/get-config "dev")))
 
 (defn prod-system
   "Assembles and returns components for a production deployment"
   []
-  (build-system config/prod))
+  (build-system (config/get-config "prod")))
