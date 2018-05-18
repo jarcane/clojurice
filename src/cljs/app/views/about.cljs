@@ -1,3 +1,7 @@
+;;;; views/about.cljs - app.views.about
+;;; The about page component
+;;; Displays the configured "about" message
+
 (ns app.views.about
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [reagent.core :as r]

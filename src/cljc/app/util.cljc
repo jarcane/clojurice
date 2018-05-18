@@ -1,3 +1,6 @@
+;;;; util.cljc
+;;; a common library for utility functions.
+
 (ns app.util)
 
 (defn deep-merge

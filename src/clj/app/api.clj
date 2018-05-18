@@ -1,12 +1,18 @@
-(ns app.api
-  (:require [compojure.api.sweet :refer :all]
-            [ring.util.http-response :refer :all]
-            [schema.core :as s]
-            [schema-tools.core :as st]
-            [app.domain :as d]
-            [app.query :as q]))
+;;;; api.clj - app.api
+;;; The main REST API handler
 
-(defn api-routes [sys]
+(ns app.api
+  (:require [app.domain :as d]
+            [app.query :as q]
+            [ring.util.http-response :refer :all]
+            [schema-tools.core :as st]
+            [schema.core :as s]
+            [compojure.api.sweet :refer :all]))
+
+(defn api-routes 
+  "The main hander for the REST API. Accepts the system map as an 
+  argument and returns a compojure-api handler."
+  [sys]
   (api
     {:swagger 
      {:ui "/api-docs" 
@@ -24,10 +30,9 @@
 
       (GET "/config" []
         :return d/FrontendConfig
-        :summary "Provide frontend configuration information"
+        :summary "Provides frontend configuration information"
         (ok (-> (:config sys)
                 (st/select-schema d/FrontendConfig))))
-
 
       (GET "/hello" []
         :return d/Message

@@ -1,3 +1,7 @@
+;;;; index.cljs - app.index
+;;; The main view component. Contains the navbar, and a body view dispatched
+;;; via the dispatch-view multimethod in app.dispatch
+
 (ns app.index
   (:require [reagent.core :as r]
             [app.views.dispatch :refer [dispatch-view]]

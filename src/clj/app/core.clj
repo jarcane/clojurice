@@ -1,10 +1,13 @@
+;;;; core.clj - app.core
+;;; The main entry point for production builds.
+
 (ns app.core
   (:gen-class)
   (:require [system.repl :refer [set-init! start]]
             [app.systems :as system]))
 
 (defn -main
-  "I don't do a whole lot ... yet."
+  "The main entry point for production deployments."
   [& args]
   (set-init! #'system/prod-system)
   (start))

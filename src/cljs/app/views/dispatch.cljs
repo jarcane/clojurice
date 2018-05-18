@@ -1,3 +1,6 @@
+;;;; views/dispatch.cljs - app.views.dispatch
+;;; The main dispatcher multimethod for body view components
+
 (ns app.views.dispatch
   (:require [reagent.core :as r]))
 

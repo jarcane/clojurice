@@ -1,3 +1,7 @@
+;;;; app.cljs - app.app
+;;; The main entry point to the frontend. Configures and initializes the router
+;;; and loads the config from the backend and places it in app-state
+
 (ns app.app
   (:require [reagent.core :as r]
             [bide.core :as b]
@@ -14,7 +18,9 @@
   (r/render [index/index name params]
             (js/document.getElementById "app"))) 
 
-(defn ^:export run []
+(defn ^:export run 
+  "The main app initialization function."
+  []
   (b/start! router/router 
     {:default :app.home
      :html5? true

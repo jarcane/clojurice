@@ -1,9 +1,14 @@
+;;;; index.clj - app.index
+;;; The main index page for the site
+
 (ns app.index
   (:require [hiccup.page :refer :all]
             [system.repl :refer [system]]
             [app.config :as config]))
 
-(defn index [{:keys [config] :as sys}]
+(defn index 
+  "Generates the main index.html for the site, given the system map."
+  [{:keys [config] :as sys}]
   (let [title (:name config)]
     (html5
       [:head

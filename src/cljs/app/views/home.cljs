@@ -1,3 +1,7 @@
+;;;; views/home.cljs - app.views.home
+;;; The main home page view component
+;;; Displays the "hello" message
+
 (ns app.views.home
   (:require [reagent.core :as r]
             [app.views.dispatch :refer [dispatch-view]]

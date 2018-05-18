@@ -1,3 +1,7 @@
+;;;; systems.clj - app.systems
+;;; The main contructors for both dev and prod system component maps
+;;; For more info on how this works see: https://github.com/danielsz/system/
+
 (ns app.systems
   (:require [com.stuartsierra.component :as component]
             [app.routes :refer [site]]
@@ -25,7 +29,9 @@
                          :formats [:json-kw]
                          :response-options {:json-kw {:pretty true}})))
 
-(defn build-system [conf]
+(defn build-system 
+  "Builds the base system-map given a configuration."
+  [conf]
   (component/system-map
     :config conf
     :db (new-postgres-database (:db conf))
@@ -42,7 +48,9 @@
     :api-server (component/using (new-immutant-web :port (:http-port conf))
                                  [:handler])))
 
-(defn dev-system []
+(defn dev-system 
+  "Fetch the dev config and assemble a dev system-map"
+  []
   (build-system (config/get-config "dev")))
 
 (defn prod-system
