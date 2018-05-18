@@ -50,7 +50,7 @@
          '[app.systems :refer [dev-system]]
          '[clojure.edn :as edn]
          '[deraen.boot-sass :refer [sass]]
-         '[powerlaces.boot-cljs-devtools :refer [cljs-devtools dirac]])
+         '[powerlaces.boot-cljs-devtools :refer [cljs-devtools]])
 
 (require '[adzerk.boot-cljs :refer :all]
          '[adzerk.boot-cljs-repl :refer :all]
@@ -76,7 +76,6 @@
       (reload :asset-path "public")
       (cljs-repl)
       (cljs-devtools)
-      (dirac)
       (cljs :source-map true :optimizations :none)
       (sass)
       (notify :audible true :visual true)))
