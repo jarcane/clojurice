@@ -57,28 +57,28 @@
          '[adzerk.boot-reload :refer :all])
 
 (task-options!
- aot {:namespace   #{'app.core}}
- jar {:main        'app.core
-      :file        (str "app-" version "-standalone.jar")}
- pom {:project project
-      :version version})
+  aot {:namespace   #{'app.main}}
+  jar {:main        'app.main
+        :file        (str "app-" version "-standalone.jar")}
+  pom {:project project
+        :version version})
 
 (deftask dev
-     "run a restartable system"
-     []
-     (comp
-      (watch :verbose true)
-      (system :sys #'dev-system
-              :auto true
-              :files ["routes.clj" "systems.clj" "api.clj" "query.clj"])
-      (repl :server true
-            :host "127.0.0.1")
-      (reload :asset-path "public")
-      (cljs-repl)
-      (cljs-devtools)
-      (cljs :source-map true :optimizations :none)
-      (sass)
-      (notify :audible true :visual true)))
+  "run a restartable system"
+  []
+  (comp
+    (watch :verbose true)
+    (system :sys #'dev-system
+            :auto true
+            :files ["routes.clj" "systems.clj" "api.clj" "query.clj"])
+    (repl :server true
+          :host "127.0.0.1")
+    (reload :asset-path "public")
+    (cljs-repl)
+    (cljs-devtools)
+    (cljs :source-map true :optimizations :none)
+    (sass)
+    (notify :audible true :visual true)))
 
 (deftask build
   "Build the project locally as a JAR."
@@ -90,13 +90,8 @@
       (sass)
       (pom) 
       (uber)
-      (jar) 
-      (target :dir dir))))
-
-(deftask run-project
-  "Run the project."
-  [a args ARG [str] "the arguments for the application."]
-  (require '[kongauth.core :as app])
-  (apply (resolve 'app/-main) args))
+      (jar)
+      (target :dir dir)
+      (notify :audible true :visual true))))
 
 (require '[adzerk.boot-test :refer [test]])

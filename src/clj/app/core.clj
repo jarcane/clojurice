@@ -1,5 +1,5 @@
 ;;;; core.clj - app.core
-;;; The main entry point for production builds.
+;;; The main entry point for production application.
 
 (ns app.core
   (:gen-class)
