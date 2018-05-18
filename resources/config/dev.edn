@@ -1,4 +1,5 @@
 {:name "My App (DEV)"
+ :dev-tools true
  :db {:subname      "//localhost/app"
       :user         "postgres"
       :password     "postgres"

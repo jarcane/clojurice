@@ -15,5 +15,6 @@
         [:title title]
         (include-css "main.css")]
       [:body
-        [:div#app]      
+        [:div#app]
+        (when (:dev-tools config) [:div#dev-tools])     
         (include-js "main.js")])))

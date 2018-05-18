@@ -1,6 +1,7 @@
 {:name "My App"
  :about "A simple Clojure(script) application"
  :http-port 7000
+ :dev-tools false
  :db {:classname    "org.postgresql.Driver" ; must be in classpath
       :subprotocol  "postgresql"
       :dbname       "app"}}

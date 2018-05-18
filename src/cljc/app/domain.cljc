@@ -23,12 +23,13 @@
   {:name      s/Str
    :about     s/Str
    :http-port s/Int
-   :db        DBConfig})
+   :db        DBConfig
+   :dev-tools s/Bool})
 
 (s/defschema FrontendConfig
   "A subset of the Config schema containing only those keys necessary
   and safe to provide to the frontend."
-  (st/select-keys Config [:name :about]))
+  (st/select-keys Config [:name :about :dev-tools]))
 
 (def Message
   "A simple message payload."

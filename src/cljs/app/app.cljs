@@ -8,7 +8,8 @@
             [app.router :as router]
             [app.index :as index]
             [app.api :as api]
-            [app.state :refer [app-state]]))
+            [app.state :refer [app-state]]
+            [reagent-dev-tools.core :as rdt]))
 
 (enable-console-print!)
 
@@ -30,3 +31,5 @@
      
 (run)
 (api/get-config!)
+(rdt/start! {:dev-tools (js/document.getElementById "dev-tools") 
+             :state-atom app-state})

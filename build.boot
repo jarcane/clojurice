@@ -43,7 +43,8 @@
                             [com.cemerick/piggieback "0.2.1" :scope "test"]
                             [binaryage/devtools "0.9.4" :scope "test"]
                             [weasel "0.7.0" :scope "test"]
-                            [deraen/boot-sass  "0.3.1" :scope "test"]])
+                            [deraen/boot-sass  "0.3.1" :scope "test"]
+                            [metosin/reagent-dev-tools "0.2.0"]])
 
 (require '[system.boot :refer [system run]]
          '[app.systems :refer [dev-system]]
