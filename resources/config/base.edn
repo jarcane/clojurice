@@ -4,4 +4,5 @@
  :dev-tools false
  :db {:classname    "org.postgresql.Driver" ; must be in classpath
       :subprotocol  "postgresql"
-      :dbname       "app"}}
+      :dbname       "app"
+      :test-env false}}

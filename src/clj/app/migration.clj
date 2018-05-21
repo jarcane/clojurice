@@ -22,6 +22,8 @@
         (.migrate))
       (assoc component :flyway fly)))
   (stop [component]
+    (when (:test-env db-conf)
+      (.clean (:flyway component)))
     (dissoc component :flyway)))
 
 (defn new-migrations 

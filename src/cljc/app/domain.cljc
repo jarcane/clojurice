@@ -16,7 +16,8 @@
    :password    s/Str
    :host        s/Str
    :port        s/Str
-   :dbname      s/Str})
+   :dbname      s/Str
+   :test-env    s/Bool})
 
 (s/defschema Config
   "The schema for the main configuration."

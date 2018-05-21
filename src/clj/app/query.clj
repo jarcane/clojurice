@@ -18,7 +18,7 @@
   [sys]
   (-> (make-query sys 
         {:select [:message]
-         :from [:app.messages]
+         :from [:messages]
          :where [:= :name "hello"]})
       first))
       

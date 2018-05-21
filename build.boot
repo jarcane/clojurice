@@ -1,7 +1,7 @@
 (def project 'app)
 (def version "0.1.0-SNAPSHOT")
 
-(set-env! :resource-paths #{"src/cljs" "src/cljc" "src/clj" "resources"}
+(set-env! :resource-paths #{"src/cljs" "src/cljc" "src/clj" "test/clj" "resources"}
           :dependencies   '[[org.clojure/clojure "1.9.0"]
                             [org.clojure/clojurescript "1.10.238"]
                             [org.clojure/core.async "0.4.474"]
@@ -24,6 +24,7 @@
                             [org.postgresql/postgresql "42.2.2"]
                             [org.flywaydb/flyway-core "5.0.7"]
                             [honeysql "0.9.2"]
+                            [clj-http "3.9.0"]
 
                             [reagent "0.8.0"]
                             [funcool/bide "1.6.0"]

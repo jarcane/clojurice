@@ -48,6 +48,11 @@
     :api-server (component/using (new-immutant-web :port (:http-port conf))
                                  [:handler])))
 
+(defn test-system
+  "Fetch the test conf and assemble a test system"
+  []
+  (build-system (config/get-config "test")))
+
 (defn dev-system 
   "Fetch the dev config and assemble a dev system-map"
   []

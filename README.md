@@ -6,7 +6,7 @@ A base template for full-stack web applications in Clojure
 
 You will need [Boot](http://boot-clj.com/) installed, as well as Java 1.8+ is recommended, and PostgreSQL 9.6+.
 
-The default configuration expects a running PGSQL server with user/password "postgres" containing a database called "app", though these settings can be re-configured. See below.
+The default configuration expects a running PGSQL server with user/password "postgres" containing databases called "app" and "app-test" (for the integration tests), though these settings can be re-configured. See below.
 
 ## Instructions
 
