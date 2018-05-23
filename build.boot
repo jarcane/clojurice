@@ -103,7 +103,7 @@
   "Run the test suite"
   []
   (comp
-    (watch :verbose true)
+    (watch)
     (cljs :optimizations :none)
-    (test)
+    (test :include #"app.test.*")
     (notify :audible true :visual true)))

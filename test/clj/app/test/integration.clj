@@ -1,4 +1,4 @@
-(ns app.integration-test
+(ns app.test.integration
   (:require [clojure.test :refer :all]
             [app.systems :as systems]
             [app.domain :as d]
