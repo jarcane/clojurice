@@ -34,6 +34,7 @@
                             [binaryage/devtools "0.9.10"]
                             [binaryage/dirac "1.2.33"]
                             [powerlaces/boot-cljs-devtools "0.2.0"]
+                            [metosin/reagent-dev-tools "0.2.0"]
 
                             [adzerk/boot-reload "0.5.2" :scope "test"]
                             [adzerk/boot-test "1.2.0" :scope "test"]
@@ -45,7 +46,8 @@
                             [binaryage/devtools "0.9.4" :scope "test"]
                             [weasel "0.7.0" :scope "test"]
                             [deraen/boot-sass  "0.3.1" :scope "test"]
-                            [metosin/reagent-dev-tools "0.2.0"]])
+                            [etaoin "0.2.8-SNAPSHOT" :scope "test"]])
+
 
 (require '[system.boot :refer [system run]]
          '[app.systems :refer [dev-system]]
@@ -96,3 +98,12 @@
       (notify :audible true :visual true))))
 
 (require '[adzerk.boot-test :refer [test]])
+
+(deftask run-tests
+  "Run the test suite"
+  []
+  (comp
+    (watch :verbose true)
+    (cljs :optimizations :none)
+    (test)
+    (notify :audible true :visual true)))

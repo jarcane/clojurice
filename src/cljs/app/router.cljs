@@ -22,7 +22,8 @@
   Use this instead of simple href to prevent the page reloading on route
   changes."
   [target text params]
-  [:a {:href (target routes)
+  [:a {:id (name target) 
+       :href (target routes)
        :on-click (fn [e]
                    (.preventDefault e)
                    (b/navigate! router target params))}
