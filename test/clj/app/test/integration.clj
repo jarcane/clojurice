@@ -18,9 +18,7 @@
 
 (use-fixtures :once system-fixture)
 
-(def ^:dynamic 
-  "Dynamic value rebound to the browser driver fixture" 
-  *driver*)
+(def ^:dynamic *driver*)
 
 (defn driver-fixture 
   "Browser test instance. Binds to *driver* for use in tests."
