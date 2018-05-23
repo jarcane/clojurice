@@ -7,7 +7,10 @@
             [clj-http.client :as h]
             [etaoin.api :refer :all]))
 
-(defn system-fixture [f]
+;;; Test Fixtures
+(defn system-fixture 
+  "Main system fixture (server/api/database)"
+  [f]
   (set-init! #'systems/test-system)
   (start)
   (f)
@@ -15,23 +18,34 @@
 
 (use-fixtures :once system-fixture)
 
-(def ^:dynamic *driver*)
+(def ^:dynamic 
+  "Dynamic value rebound to the browser driver fixture" 
+  *driver*)
 
-(defn driver-fixture [f]
+(defn driver-fixture 
+  "Browser test instance. Binds to *driver* for use in tests."
+  [f]
   (with-chrome-headless {} driver
     (binding [*driver* driver]
       (f))))
 
 (use-fixtures :each driver-fixture)
 
-(defn make-request [uri]
+;;; Helper functions
+(defn make-request 
+  "Make a request to the given short URI and return response" 
+  [uri]
   (h/get (str "http://localhost:7000" uri) {:as :auto}))
 
-(defn is-body [{:keys [body status] :as resp} schema]
+(defn is-body 
+  "Checks the given response is OK and with non-empty body that complies
+  with schema"
+  [{:keys [body status] :as resp} schema]
   (is (= 200 status))
   (is (not (empty? body)))
   (is (s/validate schema body)))
 
+;;; Tests
 (deftest ^:integration api-test 
   (testing "/api/hello"
     (let [{:keys [body] :as resp} (make-request "/api/hello")]
