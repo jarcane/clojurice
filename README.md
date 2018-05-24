@@ -46,7 +46,7 @@ Database migrations are handled with a custom [Flyway](https://flywaydb.org/) co
 
 ### Frontend
 
-The frontend design is based around a combination of multimethod dispatch for rendering each view, and client-side routing with [bide](https://github.com/funcool/bide). As such, adding a new sub-view requires a few steps that are important to remember:
+The frontend is built with [reagent](https://reagent-project.github.io/), using a combination of multimethod dispatch for rendering each view, and client-side routing with [bide](https://github.com/funcool/bide). As such, adding a new sub-view requires a few steps that are important to remember:
 
 1. Create your view under the `app.views` namespace, ie. `app.views.foo` in `cljs/app/views/foo.cljs`
 2. Require the `app.views.dispatch/dispatch-view` multimethod, and create your own multimethod to dispatch from a suitable key, ie. `:app.foo`. The method should take two arguments, the first is the key itself, the second is any parameters from the URI.
