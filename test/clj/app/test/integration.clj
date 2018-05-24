@@ -66,7 +66,7 @@
     (is (has-text? *driver* "Hello, world!")))
   (testing "About link works"
     (click *driver* :app.about)
-    (is (has-text? *driver* "Clojure")))
+    (is (has-text? *driver* "Clojuret")))
   (testing "And we can go back home"
     (click *driver* :app.home)
     (wait-visible *driver* {:class :home})

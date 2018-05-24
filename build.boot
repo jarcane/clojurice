@@ -104,6 +104,6 @@
   []
   (comp
     (watch)
+    (notify :audible true :visual true)
     (cljs :optimizations :none)
-    (test :include #"app.test.*")
-    (notify :audible true :visual true)))
+    (test :include #"app.test.*")))
