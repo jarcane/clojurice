@@ -97,13 +97,19 @@
       (target :dir dir)
       (notify :audible true :visual true))))
 
-(require '[adzerk.boot-test :refer [test]])
+(require '[adzerk.boot-test :as bt])
 
-(deftask run-tests
-  "Run the test suite"
+(deftask test 
+  "Run tests"
+  []
+  (comp
+    (notify :audible true :visual true)
+    (cljs :optimizations :none)
+    (bt/test :include #"app.test")))
+
+(deftask test-watch
+  "Automatically re-run tests on file change."
   []
   (comp
     (watch)
-    (notify :audible true :visual true)
-    (cljs :optimizations :none)
-    (test :include #"app.test.*")))
+    (test)))
