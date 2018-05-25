@@ -1,3 +1,5 @@
+![clojurice](resources/brand/clojurice-logo.png)
+
 # clojurice
 
 A base template for full-stack web applications in Clojure
