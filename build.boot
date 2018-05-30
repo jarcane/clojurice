@@ -25,6 +25,7 @@
                             [org.flywaydb/flyway-core "5.0.7"]
                             [honeysql "0.9.2"]
                             [clj-http "3.9.0"]
+                            [puppetlabs/kitchensink "2.5.2"]
 
                             [reagent "0.8.0"]
                             [funcool/bide "1.6.0"]

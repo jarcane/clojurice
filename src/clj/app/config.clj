@@ -4,7 +4,7 @@
 (ns app.config
   (:require [schema.core :as s]
             [app.domain :as d]
-            [app.util :as u]
+            [puppetlabs.kitchensink.core :refer [deep-merge]]
             [clojure.java.io :as io]
             [clojure.edn :as edn]))
 
@@ -25,4 +25,4 @@
   [profile-name]
   (let [base (get-resource-file "base.edn")
         prof (get-resource-file (str profile-name ".edn"))]
-    (s/validate d/Config (u/deep-merge base prof))))
+    (s/validate d/Config (deep-merge base prof))))
