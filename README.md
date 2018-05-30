@@ -91,4 +91,4 @@ This app is based originally on [system-template](https://github.com/shakdwipeea
 
 Written by Annaia Berry ([@jarcane](https://github.com/jarcane)). Development made possible by [Futurice](http://www.futurice.com/).
 
-Copyright (C) 2018 Futurice Oy. The code is distributed under the Eclipse Public License v2.0 or any later version. For more information see `LICENSE` in the root directory.
+Copyright (C) 2018 Futurice Oy. The code is distributed under the Eclipse Public License v2.0 or any later version. For more information see [`LICENSE`](LICENSE) in the root directory.
