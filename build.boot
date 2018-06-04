@@ -117,3 +117,9 @@
   (comp
     (watch)
     (test)))
+
+(deftask cljfmt
+  "Run cljfmt on the src/ directory and fix all formatting issues"
+  []
+  (comp
+    (fix :folder "./src/")))

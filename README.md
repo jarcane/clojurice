@@ -69,9 +69,9 @@ In addition to the frontend and backend, there are also included some common nam
 
 The default configuration will open nREPL connections to both frontend and backend, each on their own port. Check the console logs from `boot dev` to find them.
 
-The frontend environment wraps [cljs-devtools](https://github.com/binaryage/cljs-devtools) for a more pleasant browser environment for Chrome. There is also an additional [reagent-dev-tools](https://github.com/metosin/reagent-dev-tools) element added to the page in dev mode that provides reflection to the current app state.
+The frontend environment wraps [cljs-devtools](https://github.com/binaryage/cljs-devtools) for a more pleasant browser environment for Chrome. There is also an additional [reagent-dev-tools](https://github.com/metosin/reagent-dev-tools) element added to the page in dev mode that provides reflection to the current app state. You will want to turn on custom formatters in the Chrome Devtools for the cljs-devtools formatters to work.
 
-You will want to turn on custom formatters in the Chrome Devtools for the cljs-devtools formatters to work.
+A `boot cljfmt` task is provided which will run [cljfmt](https://github.com/weavejester/cljfmt) on all files in the src directory.
 
 ### Hot Reloading
 
