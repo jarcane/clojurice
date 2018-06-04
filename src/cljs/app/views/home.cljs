@@ -10,8 +10,8 @@
 
 (defn home-view []
   [:div.home
-    [:h1 "Home"]
-    [:p (:message @app-state)]])
+   [:h1 "Home"]
+   [:p (:message @app-state)]])
 
 (defmethod dispatch-view :app.home [_ _]
   (get-hello!)

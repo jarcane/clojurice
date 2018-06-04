@@ -17,7 +17,7 @@
        slurp
        edn/read-string))
 
-(defn get-config 
+(defn get-config
   "Given a name for the desired profile config, 
   loads it from matching edn and base.edn and merges.
   Profile always takes precedence over base. The resulting config

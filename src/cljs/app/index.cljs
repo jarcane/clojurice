@@ -11,8 +11,8 @@
 
 (defn index [key params]
   [:div.index
-    [:nav.navbar
-      [app-link :app.home "Home"]
-      [app-link :app.about "About"]]
-    (dispatch-view key params)])
+   [:nav.navbar
+    [app-link :app.home "Home"]
+    [app-link :app.about "About"]]
+   (dispatch-view key params)])
 

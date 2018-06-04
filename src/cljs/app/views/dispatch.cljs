@@ -8,4 +8,4 @@
 
 (defmethod dispatch-view :default not-found [_ _]
   [:div.not-found
-    [:h1 "Not Found"]])
+   [:h1 "Not Found"]])

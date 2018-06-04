@@ -29,31 +29,31 @@
                          :formats [:json-kw]
                          :response-options {:json-kw {:pretty true}})))
 
-(defn build-system 
+(defn build-system
   "Builds the base system-map given a configuration."
   [conf]
   (component/system-map
-    :config conf
-    :db (new-postgres-database (:db conf))
-    :flyway (new-migrations (:db conf))
-    :site-endpoint (component/using (new-endpoint site)
-                                    [:site-middleware :config])
-    :api-endpoint (component/using (new-endpoint api-routes)
-                                   [:api-middleware :config :db])
-    :site-middleware (new-middleware {:middleware [[wrap-defaults site-defaults]]})
-    :api-middleware (new-middleware
-                     {:middleware [rest-middleware
-                                    [wrap-defaults api-defaults]]})
-    :handler (component/using (new-handler) [:api-endpoint :site-endpoint])
-    :api-server (component/using (new-immutant-web :port (:http-port conf))
-                                 [:handler])))
+   :config conf
+   :db (new-postgres-database (:db conf))
+   :flyway (new-migrations (:db conf))
+   :site-endpoint (component/using (new-endpoint site)
+                                   [:site-middleware :config])
+   :api-endpoint (component/using (new-endpoint api-routes)
+                                  [:api-middleware :config :db])
+   :site-middleware (new-middleware {:middleware [[wrap-defaults site-defaults]]})
+   :api-middleware (new-middleware
+                    {:middleware [rest-middleware
+                                  [wrap-defaults api-defaults]]})
+   :handler (component/using (new-handler) [:api-endpoint :site-endpoint])
+   :api-server (component/using (new-immutant-web :port (:http-port conf))
+                                [:handler])))
 
 (defn test-system
   "Fetch the test conf and assemble a test system"
   []
   (build-system (config/get-config "test")))
 
-(defn dev-system 
+(defn dev-system
   "Fetch the dev config and assemble a dev system-map"
   []
   (build-system (config/get-config "dev")))

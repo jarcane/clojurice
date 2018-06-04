@@ -11,8 +11,8 @@
 
 (defn about-view []
   [:div.about
-    [:h1 "About"]
-    [:p (-> @app-state :config :about)]])
+   [:h1 "About"]
+   [:p (-> @app-state :config :about)]])
 
 (defmethod dispatch-view :app.about [_ _]
   [about-view])

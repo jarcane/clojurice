@@ -4,7 +4,7 @@
 (ns app.domain
   (:require [schema.core :as s :include-macros true]
             [schema-tools.core :as st]))
-  
+
 (s/defschema DBConfig
   "Schema for the database configuration. Note that 'subname' is the 
   URL for the db (ie. //localhost/dbname), and that the dbname in the URL

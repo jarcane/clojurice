@@ -19,17 +19,17 @@
   (println "Route change to: " name params query)
   (swap! app-state assoc :view name)
   (r/render [index/index name params]
-            (js/document.getElementById "app"))) 
+            (js/document.getElementById "app")))
 
-(defn ^:export run 
+(defn ^:export run
   "The main app initialization function."
   []
-  (b/start! router/router 
-    {:default :app.home
-     :html5? true
-     :on-navigate on-navigate}))
-     
+  (b/start! router/router
+            {:default :app.home
+             :html5? true
+             :on-navigate on-navigate}))
+
 (run)
 (api/get-config!)
-(rdt/start! {:dev-tools (js/document.getElementById "dev-tools") 
+(rdt/start! {:dev-tools (js/document.getElementById "dev-tools")
              :state-atom app-state})

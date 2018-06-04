@@ -13,12 +13,12 @@
         result (jdbc/query db query-str)]
     result))
 
-(defn get-hello 
+(defn get-hello
   "Fetch the 'hello' message from the DB"
   [sys]
-  (-> (make-query sys 
-        {:select [:message]
-         :from [:messages]
-         :where [:= :name "hello"]})
+  (-> (make-query sys
+                  {:select [:message]
+                   :from [:messages]
+                   :where [:= :name "hello"]})
       first))
-      
+

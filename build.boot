@@ -47,14 +47,17 @@
                             [binaryage/devtools "0.9.4" :scope "test"]
                             [weasel "0.7.0" :scope "test"]
                             [deraen/boot-sass  "0.3.1" :scope "test"]
-                            [etaoin "0.2.8-SNAPSHOT" :scope "test"]])
+                            [etaoin "0.2.8-SNAPSHOT" :scope "test"]
+                            [boot-cljfmt "0.1.1" :scope "test"]])
 
 
 (require '[system.boot :refer [system run]]
          '[app.systems :refer [dev-system]]
          '[clojure.edn :as edn]
          '[deraen.boot-sass :refer [sass]]
-         '[powerlaces.boot-cljs-devtools :refer [cljs-devtools]])
+         '[powerlaces.boot-cljs-devtools :refer [cljs-devtools]]
+         '[boot-cljfmt.core :refer [check fix]])
+         
 
 (require '[adzerk.boot-cljs :refer :all]
          '[adzerk.boot-cljs-repl :refer :all]

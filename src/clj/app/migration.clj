@@ -5,7 +5,6 @@
   (:require [com.stuartsierra.component :as component])
   (:import org.flywaydb.core.Flyway))
 
-
 ;; The main lifecycle component for handling migrations. On start it creates
 ;; a Flyway object, connects to the configured database, and applies the 
 ;; stored migrations in db/migrations. The Flyway object is saved to the :flyway
@@ -26,7 +25,7 @@
       (.clean (:flyway component)))
     (dissoc component :flyway)))
 
-(defn new-migrations 
+(defn new-migrations
   "Creates a new Migrations record from the database configuration"
   [db-conf]
   (map->Migrations {:db-conf db-conf}))

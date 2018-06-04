@@ -9,32 +9,32 @@
             [schema.core :as s]
             [compojure.api.sweet :refer :all]))
 
-(defn api-routes 
+(defn api-routes
   "The main hander for the REST API. Accepts the system map as an 
   argument and returns a compojure-api handler."
   [sys]
   (api
-    {:swagger 
-     {:ui "/api-docs" 
-      :spec "/swagger.json"
-      :data {:info {:title "app"}
-             :tags [{:name "api" :description "Main API root"}]}}}
-    
-    (context "/api" []
-      :tags ["api"]
+   {:swagger
+    {:ui "/api-docs"
+     :spec "/swagger.json"
+     :data {:info {:title "app"}
+            :tags [{:name "api" :description "Main API root"}]}}}
 
-      (GET "/health" []
-        :return s/Str
-        :summary "A simple health check"
-        (ok "OK"))
+   (context "/api" []
+     :tags ["api"]
 
-      (GET "/config" []
-        :return d/FrontendConfig
-        :summary "Provides frontend configuration information"
-        (ok (-> (:config sys)
-                (st/select-schema d/FrontendConfig))))
+     (GET "/health" []
+       :return s/Str
+       :summary "A simple health check"
+       (ok "OK"))
 
-      (GET "/hello" []
-        :return d/Message
-        :summary "Hello, world!"
-        (ok (q/get-hello sys))))))
+     (GET "/config" []
+       :return d/FrontendConfig
+       :summary "Provides frontend configuration information"
+       (ok (-> (:config sys)
+               (st/select-schema d/FrontendConfig))))
+
+     (GET "/hello" []
+       :return d/Message
+       :summary "Hello, world!"
+       (ok (q/get-hello sys))))))

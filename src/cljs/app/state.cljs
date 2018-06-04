@@ -6,10 +6,10 @@
 
 (def init
   "The initial state of the application"
-  {:view    :app.home 
+  {:view    :app.home
    :message nil
    :config  {}})
 
-(def app-state 
+(def app-state
   "The global app state atom"
   (r/atom init))
