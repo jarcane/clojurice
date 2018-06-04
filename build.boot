@@ -70,7 +70,8 @@
         :file        (str "app-" version "-standalone.jar")}
   pom {:project project
         :version version}
-  repl {:port 6809}) 
+  repl {:port 6809})  ; This changes the port for the CLJS REPL
+                      ; The CLJ REPL is over ridden by the task below
 
 (deftask dev
   "run a restartable system"
