@@ -69,7 +69,8 @@
   jar {:main        'app.main
         :file        (str "app-" version "-standalone.jar")}
   pom {:project project
-        :version version})
+        :version version}
+  repl {:port 6809}) 
 
 (deftask dev
   "run a restartable system"
@@ -80,7 +81,8 @@
             :auto true
             :files ["routes.clj" "systems.clj" "api.clj" "query.clj"])
     (repl :server true
-          :host "127.0.0.1")
+          :host "127.0.0.1"
+          :port 6502)
     (reload :asset-path "public")
     (cljs-repl)
     (cljs-devtools)

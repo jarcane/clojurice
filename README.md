@@ -67,7 +67,7 @@ In addition to the frontend and backend, there are also included some common nam
 
 ### Dev tools
 
-The default configuration will open nREPL connections to both frontend and backend, each on their own port. Check the console logs from `boot dev` to find them.
+The default configuration will open nREPL connections to both frontend at port 6809, and backend at port 6502. 
 
 The frontend environment wraps [cljs-devtools](https://github.com/binaryage/cljs-devtools) for a more pleasant browser environment for Chrome. There is also an additional [reagent-dev-tools](https://github.com/metosin/reagent-dev-tools) element added to the page in dev mode that provides reflection to the current app state. You will want to turn on custom formatters in the Chrome Devtools for the cljs-devtools formatters to work.
 
