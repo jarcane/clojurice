@@ -31,8 +31,7 @@
      (GET "/config" []
        :return d/FrontendConfig
        :summary "Provides frontend configuration information"
-       (ok (-> (:config sys)
-               (st/select-schema d/FrontendConfig))))
+       (ok (st/select-schema (:config sys) d/FrontendConfig)))
 
      (GET "/hello" []
        :return d/Message

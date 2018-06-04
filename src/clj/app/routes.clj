@@ -10,8 +10,10 @@
 (defn index-page
   "Wraps the index page as a proper HTTP response."
   [sys]
-  (-> (response/ok (index sys))
-      (response/header "Content-Type" "text/html; charset=UTF-8")))
+  (response/header
+   (response/ok (index sys))
+   "Content-Type"
+   "text/html; charset=UTF-8"))
 
 (defn site
   "The main compojure handler for static routes. Note that the 'ANY'

@@ -16,9 +16,8 @@
 (defn get-hello
   "Fetch the 'hello' message from the DB"
   [sys]
-  (-> (make-query sys
-                  {:select [:message]
-                   :from [:messages]
-                   :where [:= :name "hello"]})
-      first))
-
+  (first
+   (make-query sys
+               {:select [:message]
+                :from [:messages]
+                :where [:= :name "hello"]})))

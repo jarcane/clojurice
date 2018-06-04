@@ -48,7 +48,8 @@
                             [weasel "0.7.0" :scope "test"]
                             [deraen/boot-sass  "0.3.1" :scope "test"]
                             [etaoin "0.2.8-SNAPSHOT" :scope "test"]
-                            [boot-cljfmt "0.1.1" :scope "test"]])
+                            [boot-cljfmt "0.1.1" :scope "test"]
+                            [tolitius/boot-check "0.1.9" :scope "test"]])
 
 
 (require '[system.boot :refer [system run]]
@@ -56,8 +57,8 @@
          '[clojure.edn :as edn]
          '[deraen.boot-sass :refer [sass]]
          '[powerlaces.boot-cljs-devtools :refer [cljs-devtools]]
-         '[boot-cljfmt.core :refer [check fix]])
-         
+         '[boot-cljfmt.core :refer [check fix]]
+         '[tolitius.boot-check :as bc])
 
 (require '[adzerk.boot-cljs :refer :all]
          '[adzerk.boot-cljs-repl :refer :all]
@@ -122,4 +123,13 @@
   "Run cljfmt on the src/ directory and fix all formatting issues"
   []
   (comp
+    (notify :audible true :visual true)
     (fix :folder "./src/")))
+
+(deftask analyse
+  "Run code linting analysis with kibit and bikeshed"
+  []
+  (comp
+    (notify :audible true :visual true)
+    (bc/with-kibit)
+    (bc/with-bikeshed)))

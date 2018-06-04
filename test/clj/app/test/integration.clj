@@ -40,7 +40,7 @@
   with schema"
   [{:keys [body status] :as resp} schema]
   (is (= 200 status))
-  (is (not (empty? body)))
+  (is (seq body))
   (is (s/validate schema body)))
 
 ;;; Tests
