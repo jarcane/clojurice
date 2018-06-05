@@ -1,5 +1,9 @@
 sudo: false
 language: java
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database apptest;' -U postgres
 script: boot test
 install:
   - mkdir -p ~/bin
@@ -20,7 +24,3 @@ cache:
   - $HOME/.boot/cache/bin
   - $HOME/.boot/cache/lib
   - $HOME/bin
-services:
-  - postgresql
-before_script:
-  - psql -c 'create database app-test;' -U postgres

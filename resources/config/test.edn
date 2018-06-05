@@ -1,9 +1,9 @@
-{:db {:subname      "//localhost/app-test"
+{:db {:subname      "//localhost/apptest"
       :user         "postgres"
       :password     "postgres"
       :host         "127.0.0.1"
       :port         "5432"
-      :dbname       "app-test"
+      :dbname       "apptest"
       :test-env     true}
  :http-port 7000} 
       
