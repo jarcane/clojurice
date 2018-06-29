@@ -30,6 +30,17 @@ boot build <target-dir>
 
 An uberjar called "app-(version)-standalone.jar" will be found in the target directory. The project version number can be set in `build.boot`.
 
+
+### Docker integration for development
+
+You can also use the docker-compose.
+
+```
+docker-compose up --build
+```
+
+Then it will be started the web server on localhost:7000.
+
 ## Configuration
 
 Configuration is handled via EDN files under the `resources/config` directory. `base.edn` provides the base configuration that applies to all environments, while the two profiles, `dev.edn` and `prod.edn` are loaded in their respective environments and take precedence over `base.edn`. In addition, on load time, the config files are checked against the `Config` schema located in `domain.cljc`.
