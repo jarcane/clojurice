@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  db:
+    build:
+      context: ./docker_configs/postgres
+    container_name: myapp_db
+    environment:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=postgres'
+    volumes:
+      - 'db-data:/var/lib/postgresql/data'
+    ports:
+      - '5432:5432'
+  app:
+    image: clojure:boot
+    container_name: myapp_app
+    command: boot dev
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/tmp
+      - maven-cache:/root/.m2
+    ports:
+      - '7000:7000'
+      - '6809:6809' # nREPL for CLJS
+      - '6502:6502' # nREPL for CLJ
+    links:
+      - db
+volumes:
+  maven-cache: {}
+  db-data: {}
