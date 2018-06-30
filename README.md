@@ -48,6 +48,8 @@ Of most important note is the `:site-endpoint`, which is the component that hand
 
 Database migrations are handled with a custom [Flyway](https://flywaydb.org/) component, configured to automatically run on server start or reload. Migrations are located in `resources/db/migrations`, which contains `.sql` files for migrations, named according to the scheme described in the [Flyway documentation](https://flywaydb.org/documentation/migrations#sql-based-migrations). The `Flyway` object is available from the system-map as `:flyway` and can thus be called from the REPL or from any component that inherits it as a dependency. This is useful for rolling back migrations in test, etc.
 
+For SQL abstraction, [honeysql](https://github.com/jkk/honeysql) is used on top of [clojure.java.jdbc](https://github.com/clojure/java.jdbc). HoneySQL provides a way of writing SQL queries as maps, which can thus be built and composed as any other Clojure map. A helper function, `app.query/make-query` is provided in `query.sql` for wrapping the call to the JDBC driver, so one need only provide the system map and the SQL query map to get a result. 
+
 ### Frontend
 
 The frontend is built with [reagent](https://reagent-project.github.io/), using a combination of multimethod dispatch for rendering each view, and client-side routing with [bide](https://github.com/funcool/bide). As such, adding a new sub-view requires a few steps that are important to remember:
