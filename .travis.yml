@@ -17,7 +17,7 @@ install:
   # Could use `latest` tag instead of version number
   - curl -L https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh -o ~/bin/boot
   - chmod +x ~/bin/boot
-  - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
+  # - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
 env:
   matrix:
     - BOOT_CLOJURE_VERSION=1.9.0
