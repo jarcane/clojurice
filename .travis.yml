@@ -20,8 +20,6 @@ install:
   - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
 env:
   matrix:
-    # Runs tests twice, using Clj 1.8 and 1.9
-    - BOOT_CLOJURE_VERSION=1.8.0
     - BOOT_CLOJURE_VERSION=1.9.0
 jdk:
   - oraclejdk8
