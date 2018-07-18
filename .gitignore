@@ -3,3 +3,5 @@ Leiningen.gitignore
 target/
 out/
 .vscode/
+hsperfdata_root/
+libjsass-*
