@@ -22,7 +22,7 @@
                             [metosin/schema-tools "0.10.2"]
                             [hiccup "1.0.5"]
                             [org.postgresql/postgresql "42.2.2"]
-                            [org.flywaydb/flyway-core "5.0.7"]
+                            [org.flywaydb/flyway-core "5.2.4"]
                             [honeysql "0.9.2"]
                             [clj-http "3.9.0"]
                             [puppetlabs/kitchensink "2.5.2"]
