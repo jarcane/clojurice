@@ -22,7 +22,7 @@ env:
   matrix:
     - BOOT_CLOJURE_VERSION=1.9.0
 jdk:
-  - oraclejdk8
+  - openjdk11
 cache:
   directories:
   - $HOME/.m2
