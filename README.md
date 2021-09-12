@@ -6,7 +6,7 @@ An opinionated starter app for full-stack web applications in Clojure
 
 ## Requirements
 
-You will need [Boot](http://boot-clj.com/) installed, as well as Java 1.8+, and PostgreSQL 9.6+.
+You will need [Boot](https://boot-clj.github.io/) installed, as well as Java 1.8+, and PostgreSQL 9.6+.
 
 The default configuration expects a running PGSQL server with user/password "postgres" containing databases called "app" and "apptest" (for the integration tests), though these settings can be re-configured. See below.
 
