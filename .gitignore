@@ -3,3 +3,6 @@ Leiningen.gitignore
 target/
 out/
 .vscode/
+.calva/
+.clj-kondo/
+.lsp/
