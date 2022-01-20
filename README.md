@@ -69,6 +69,8 @@ In addition to the frontend and backend, there are also included some common nam
 
 ### Dev tools
 
+A docker-compose.yml has been provided to start up a basic Postgres configuration with default settings described above with a simple `docker-compose up`.
+
 The default configuration will open nREPL connections to both frontend at port 6809, and backend at port 6502. 
 
 The frontend environment wraps [cljs-devtools](https://github.com/binaryage/cljs-devtools) for a more pleasant browser environment for Chrome. There is also an additional [reagent-dev-tools](https://github.com/metosin/reagent-dev-tools) element added to the page in dev mode that provides reflection to the current app state. You will want to turn on custom formatters in the Chrome Devtools for the cljs-devtools formatters to work.
