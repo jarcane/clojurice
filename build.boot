@@ -27,7 +27,9 @@
                             [clj-http "3.9.0"]
                             [puppetlabs/kitchensink "2.5.2"]
 
-                            [reagent "0.8.0"]
+                            [reagent "1.1.0"]
+                            [cljsjs/react "17.0.2-0"]
+                            [cljsjs/react-dom "17.0.2-0"]
                             [metosin/reagent-dev-tools "0.4.0"]
                             [funcool/bide "1.7.0"]
                             [cljs-http "0.1.45"]

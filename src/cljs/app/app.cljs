@@ -4,6 +4,7 @@
 
 (ns app.app
   (:require [reagent.core :as r]
+            [reagent.dom :as dom]
             [bide.core :as b]
             [app.router :as router]
             [app.index :as index]
@@ -18,8 +19,8 @@
   [name params query]
   (println "Route change to: " name params query)
   (swap! app-state assoc :view name)
-  (r/render [index/index name params]
-            (js/document.getElementById "app")))
+  (dom/render [index/index name params]
+              (js/document.getElementById "app")))
 
 (defn ^:export run
   "The main app initialization function."
