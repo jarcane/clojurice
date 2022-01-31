@@ -35,7 +35,7 @@
   (component/system-map
    :config conf
    :db (new-postgres-database (:db conf))
-   :flyway (new-migrations (:db conf))
+   :migrations (new-migrations (:db conf))
    :site-endpoint (component/using (new-endpoint site)
                                    [:site-middleware :config])
    :api-endpoint (component/using (new-endpoint api-routes)

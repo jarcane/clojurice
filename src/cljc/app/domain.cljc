@@ -12,7 +12,7 @@
   
   WARNING! Take special care with the :test-env key! This should only be enabled
   when running unit/integration tests, as it tells the migration component
-  to run Flyway 'clean' at component shutdown!"
+  to run the db 'clean' at component shutdown!"
   {:classname   s/Str       ; classname of the DB driver
    :subprotocol s/Str       ; subprotocol type (ie. "postgresql")
    :subname     s/Str       ; see above comment
