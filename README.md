@@ -77,8 +77,6 @@ There is also an additional [reagent-dev-tools](https://github.com/metosin/reage
 
 A `boot cljfmt` task is provided which will run [cljfmt](https://github.com/weavejester/cljfmt) on all files in the src directory. The `check` and `fix` tasks from [boot-cljfmt](https://github.com/siilisolutions/boot-cljfmt) are also available directly, and can be used to run against individual files or directories as needed.
 
-For basic linting a `boot analyse` task is provided, which will check the source files with [kibit](https://github.com/jonase/kibit) and [bikeshed](https://github.com/dakrone/lein-bikeshed) for common style issues.
-
 ### Hot Reloading
 
 Both frontend and backend code have been configured to automatically reload on file changes. There's even a helpful audio cue to notify you once a rebuild is done.

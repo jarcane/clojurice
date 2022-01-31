@@ -43,16 +43,14 @@
                             [weasel "0.7.1" :scope "test"]
                             [deraen/boot-sass  "0.5.5" :scope "test"]
                             [etaoin "0.4.6" :scope "test"]
-                            [boot-cljfmt "0.1.3" :scope "test"]
-                            [tolitius/boot-check "0.1.13" :scope "test"]])
+                            [boot-cljfmt "0.1.3" :scope "test"]])
 
 
 (require '[system.boot :refer [system run]]
          '[app.systems :refer [dev-system]]
          '[clojure.edn :as edn]
          '[deraen.boot-sass :refer [sass]]
-         '[boot-cljfmt.core :refer [check fix]]
-         '[tolitius.boot-check :as bc])
+         '[boot-cljfmt.core :refer [check fix]])
 
 (require '[adzerk.boot-cljs :refer :all]
          '[adzerk.boot-cljs-repl :refer :all]
@@ -118,10 +116,3 @@
   (comp
     (notify :audible true :visual true)
     (fix :folder "./src/")))
-
-(deftask analyse
-  "Run code linting analysis with kibit and bikeshed"
-  []
-  (comp
-    (bc/with-kibit)
-    (bc/with-bikeshed)))
