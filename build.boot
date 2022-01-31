@@ -24,8 +24,8 @@
                             [org.postgresql/postgresql "42.3.1"]
                             [dev.weavejester/ragtime "0.9.0"]
                             [com.github.seancorfield/honeysql "2.2.861"]
-                            [clj-http "3.9.0"]
-                            [puppetlabs/kitchensink "2.5.2"]
+                            [clj-http "3.12.3"]
+                            [puppetlabs/kitchensink "3.1.3"]
 
                             [reagent "1.1.0"]
                             [cljsjs/react "17.0.2-0"]
