@@ -38,14 +38,13 @@
                             [adzerk/boot-test "1.2.0" :scope "test"]
                             [adzerk/boot-cljs "2.1.5" :scope "test"]
                             [adzerk/boot-cljs-repl "0.4.0" :scope "test"]
-                            [adzerk/boot-reload "0.6.0" :scope "test"]
+                            [adzerk/boot-reload "0.6.1" :scope "test"]
                             [cider/piggieback "0.5.3"  :scope "test"]
-                            [weasel "0.7.0" :scope "test"]
-                            [nrepl "0.4.5"  :scope "test"]
-                            [deraen/boot-sass  "0.3.1" :scope "test"]
-                            [etaoin "0.2.8-SNAPSHOT" :scope "test"]
-                            [boot-cljfmt "0.1.1" :scope "test"]
-                            [tolitius/boot-check "0.1.9" :scope "test"]])
+                            [weasel "0.7.1" :scope "test"]
+                            [deraen/boot-sass  "0.5.5" :scope "test"]
+                            [etaoin "0.4.6" :scope "test"]
+                            [boot-cljfmt "0.1.3" :scope "test"]
+                            [tolitius/boot-check "0.1.13" :scope "test"]])
 
 
 (require '[system.boot :refer [system run]]
