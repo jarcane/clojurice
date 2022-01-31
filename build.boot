@@ -2,7 +2,7 @@
 (def version "0.1.0-SNAPSHOT")
 
 (set-env! :resource-paths #{"src/cljs" "src/cljc" "src/clj" "test/clj" "resources"}
-          :dependencies   '[[org.clojure/clojure "1.9.0"]
+          :dependencies   '[[org.clojure/clojure "1.10.3"]
                             [org.clojure/clojurescript "1.10.238"]
                             [org.clojure/core.async "0.4.474"]
 
