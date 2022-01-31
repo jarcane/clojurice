@@ -22,7 +22,7 @@
                             [metosin/schema-tools "0.10.2"]
                             [hiccup "1.0.5"]
                             [org.postgresql/postgresql "42.2.2"]
-                            [org.flywaydb/flyway-core "5.2.4"]
+                            [ragtime "0.8.0"]
                             [honeysql "0.9.2"]
                             [clj-http "3.9.0"]
                             [puppetlabs/kitchensink "2.5.2"]
@@ -88,8 +88,7 @@
     (cljs-repl)
     (cljs-devtools)
     (cljs :source-map true :optimizations :none)
-    (sass)
-    (notify :audible true :visual true)))
+    (sass)))
 
 (deftask build
   "Build the project locally as a JAR."
@@ -102,8 +101,7 @@
       (pom) 
       (uber)
       (jar)
-      (target :dir dir)
-      (notify :audible true :visual true))))
+      (target :dir dir))))
 
 (require '[adzerk.boot-test :as bt])
 
@@ -111,7 +109,6 @@
   "Run tests"
   []
   (comp
-    (notify :audible true :visual true)
     (cljs :optimizations :none)
     (bt/test :include #"app.test")))
 
@@ -133,6 +130,5 @@
   "Run code linting analysis with kibit and bikeshed"
   []
   (comp
-    (notify :audible true :visual true)
     (bc/with-kibit)
     (bc/with-bikeshed)))
