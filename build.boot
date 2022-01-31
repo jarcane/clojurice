@@ -4,7 +4,7 @@
 (set-env! :resource-paths #{"src/cljs" "src/cljc" "src/clj" "test/clj" "resources"}
           :dependencies   '[[org.clojure/clojure "1.10.3"]
                             [org.clojure/clojurescript "1.11.4"]
-                            [org.clojure/core.async "0.4.474"]
+                            [org.clojure/core.async "1.5.648"]
 
                             [org.immutant/immutant "2.1.9"]
                             [org.danielsz/system "0.4.2-SNAPSHOT"]
