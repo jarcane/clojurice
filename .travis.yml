@@ -7,7 +7,7 @@ addons:
   apt: 
     packages:
       - firefox
-      - geckodriver
+      - firefox-geckodriver
 before_script:
   - psql -c 'create database apptest;' -U postgres
 script: boot test
