@@ -20,7 +20,6 @@ install:
   # - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
 env:
   matrix:
-    - BOOT_VERSION=2.8.3
     - BOOT_CLOJURE_VERSION=1.10.3
 jdk:
   - openjdk11
