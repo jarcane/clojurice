@@ -2,7 +2,7 @@
 ;;; Database query functions
 
 (ns app.query
-  (:require [honeysql.core :as sql]
+  (:require [honey.sql :as sql]
             [clojure.java.jdbc :as jdbc]))
 
 (defn make-query
