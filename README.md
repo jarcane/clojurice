@@ -87,7 +87,7 @@ Note that the full backend server system will only be restarted completely when 
 
 Some basic integration tests have been provided. You can run these with `boot test`, or with `boot test-watch`, which will start a watcher and run all tests on file change.
 
-The tests include browser testing via [etaoin](https://github.com/igrishaev/etaoin), and you will also need to install the Chrome webdriver. Information and links on how to do this can be found [here](https://github.com/igrishaev/etaoin#installing-drivers). On Mac it can be installed with `brew install chromedriver`, or on Windows with `scoop install chromedriver`. You will also of course need Chrome. 
+The tests include browser testing via [etaoin](https://github.com/igrishaev/etaoin), and you will also need to install the Firefox-based `geckowebdriver`. Information and links on how to do this can be found [here](https://github.com/igrishaev/etaoin#installing-drivers). On Mac it can be installed with `brew install geckodriver`, on Ubuntu with `firefox-geckowebdriver`, or on Windows with `scoop install geckodriver`. You will also of course need Chrome. 
 
 ## Credits and License
 
