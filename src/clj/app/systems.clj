@@ -16,7 +16,7 @@
             [ring.middleware.not-modified :refer [wrap-not-modified]]
             [ring.middleware.content-type :refer [wrap-content-type]]
             (system.components
-             [immutant-web :refer [new-immutant-web]]
+             [http-kit :refer [new-http-kit]]
              [endpoint :refer [new-endpoint]]
              [middleware :refer [new-middleware]]
              [repl-server :refer [new-repl-server]]
@@ -45,7 +45,7 @@
                     {:middleware [rest-middleware
                                   [wrap-defaults api-defaults]]})
    :handler (component/using (new-handler) [:api-endpoint :site-endpoint])
-   :api-server (component/using (new-immutant-web :port (:http-port conf))
+   :api-server (component/using (new-http-kit :port (:http-port conf))
                                 [:handler])))
 
 (defn test-system

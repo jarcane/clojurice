@@ -6,7 +6,7 @@
                             [org.clojure/clojurescript "1.11.4"]
                             [org.clojure/core.async "1.5.648"]
 
-                            [org.immutant/immutant "2.1.10"]
+                            [http-kit "2.3.0"]
                             [org.danielsz/system "0.4.7"]
                             [org.clojure/java.jdbc "0.7.12"]
                             [org.clojure/tools.cli "1.0.206"]
