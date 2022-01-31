@@ -32,8 +32,8 @@
                             [cljsjs/react-dom "17.0.2-0"]
                             [metosin/reagent-dev-tools "0.4.0"]
                             [funcool/bide "1.7.0"]
-                            [cljs-http "0.1.45"]
-                            [com.cognitect/transit-cljs "0.8.256"]
+                            [cljs-http "0.1.46"]
+                            [com.cognitect/transit-cljs "0.8.269"]
 
                             [adzerk/boot-test "1.2.0" :scope "test"]
                             [adzerk/boot-cljs "2.1.5" :scope "test"]
