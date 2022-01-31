@@ -23,7 +23,7 @@
 (defn driver-fixture 
   "Browser test instance. Binds to *driver* for use in tests."
   [f]
-  (with-chrome-headless {:args ["--no-sandbox"]} driver
+  (with-firefox-headless {} driver
     (binding [*driver* driver]
       (f))))
 
