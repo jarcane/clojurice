@@ -3,7 +3,7 @@
 
 (set-env! :resource-paths #{"src/cljs" "src/cljc" "src/clj" "test/clj" "resources"}
           :dependencies   '[[org.clojure/clojure "1.10.3"]
-                            [org.clojure/clojurescript "1.10.238"]
+                            [org.clojure/clojurescript "1.11.4"]
                             [org.clojure/core.async "0.4.474"]
 
                             [org.immutant/immutant "2.1.9"]
@@ -28,24 +28,18 @@
                             [puppetlabs/kitchensink "2.5.2"]
 
                             [reagent "0.8.0"]
-                            [funcool/bide "1.6.0"]
+                            [metosin/reagent-dev-tools "0.4.0"]
+                            [funcool/bide "1.7.0"]
                             [cljs-http "0.1.45"]
                             [com.cognitect/transit-cljs "0.8.256"]
 
-                            [binaryage/devtools "0.9.10"]
-                            [binaryage/dirac "1.2.33"]
-                            [powerlaces/boot-cljs-devtools "0.2.0"]
-                            [metosin/reagent-dev-tools "0.2.0"]
-
-                            [adzerk/boot-reload "0.5.2" :scope "test"]
                             [adzerk/boot-test "1.2.0" :scope "test"]
-                            [adzerk/boot-cljs "2.1.4" :scope "test"]
-                            [adzerk/boot-cljs-repl "0.3.3" :scope "test"]
-                            [adzerk/boot-test "1.2.0" :scope "test"]
+                            [adzerk/boot-cljs "2.1.5" :scope "test"]
+                            [adzerk/boot-cljs-repl "0.4.0" :scope "test"]
                             [adzerk/boot-reload "0.6.0" :scope "test"]
-                            [com.cemerick/piggieback "0.2.1" :scope "test"]
-                            [binaryage/devtools "0.9.4" :scope "test"]
+                            [cider/piggieback "0.3.9"  :scope "test"]
                             [weasel "0.7.0" :scope "test"]
+                            [nrepl "0.4.5"  :scope "test"]
                             [deraen/boot-sass  "0.3.1" :scope "test"]
                             [etaoin "0.2.8-SNAPSHOT" :scope "test"]
                             [boot-cljfmt "0.1.1" :scope "test"]
@@ -56,7 +50,6 @@
          '[app.systems :refer [dev-system]]
          '[clojure.edn :as edn]
          '[deraen.boot-sass :refer [sass]]
-         '[powerlaces.boot-cljs-devtools :refer [cljs-devtools]]
          '[boot-cljfmt.core :refer [check fix]]
          '[tolitius.boot-check :as bc])
 
@@ -86,7 +79,6 @@
           :port 6502)
     (reload :asset-path "public")
     (cljs-repl)
-    (cljs-devtools)
     (cljs :source-map true :optimizations :none)
     (sass)))
 
