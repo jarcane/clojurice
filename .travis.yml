@@ -6,8 +6,8 @@ addons:
   postgresql: "9.6"
   apt: 
     packages:
-      - google-chrome-stable
-      - chromium-chromedriver
+      - firefox
+      - geckodriver
 before_script:
   - psql -c 'create database apptest;' -U postgres
 script: boot test
