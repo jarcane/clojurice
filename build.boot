@@ -116,5 +116,4 @@
   "Run cljfmt on the src/ directory and fix all formatting issues"
   []
   (comp
-    (notify :audible true :visual true)
     (fix :folder "./src/")))
