@@ -6,7 +6,7 @@ An opinionated starter app for full-stack web applications in Clojure
 
 ## Requirements
 
-You will need [Boot](https://boot-clj.github.io/) installed, as well as Java 1.8+, and PostgreSQL 9.6+.
+You will need [Boot](https://boot-clj.github.io/) installed, as well as Java 1.8+, and PostgreSQL 9.6+. Docker is also recommended for local development.
 
 ## Instructions
 
@@ -15,6 +15,7 @@ The best way to start a new project is to simply click the "Use this template" b
 To start the dev environment do:
 
 ```
+docker-compose &
 boot dev
 ```
 
