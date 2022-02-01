@@ -4,9 +4,9 @@
 (ns app.config
   (:require [schema.core :as s]
             [app.domain :as d]
-            [puppetlabs.kitchensink.core :refer [deep-merge]]
             [clojure.java.io :as io]
-            [clojure.edn :as edn]))
+            [clojure.edn :as edn]
+            [deep.merge :as dm]))
 
 (defn get-resource-file
   "Given a filename, loads it from config/ on the resource path
@@ -25,4 +25,4 @@
   [profile-name]
   (let [base (get-resource-file "base.edn")
         prof (get-resource-file (str profile-name ".edn"))]
-    (s/validate d/Config (deep-merge base prof))))
+    (s/validate d/Config (dm/distinct-merge base prof))))
