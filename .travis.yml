@@ -3,7 +3,7 @@ language: java
 services:
   - postgresql
 addons:
-  postgresql: "9.6"
+  postgresql: "11"
   apt: 
     packages:
       - firefox
