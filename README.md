@@ -92,6 +92,6 @@ The tests include browser testing via [etaoin](https://github.com/igrishaev/etao
 
 This app is based originally on [system-template](https://github.com/shakdwipeea/system-template) with some further guidance from [tenzing](https://github.com/martinklepsch/tenzing).
 
-Developed by Annaia Berry ([@jarcane](https://github.com/jarcane)). Development made possible by [Futurice](http://www.futurice.com/).
+Developed by Annaia Danvers ([@jarcane](https://github.com/jarcane)). Development made possible by [Futurice](http://www.futurice.com/).
 
-Copyright (C) 2018 Annaia Berry. The code is distributed under the Eclipse Public License v2.0 or any later version. For more information see [`LICENSE`](LICENSE) in the root directory.
+Copyright (C) 2018 Annaia Danvers. The code is distributed under the Eclipse Public License v2.0 or any later version. For more information see [`LICENSE`](LICENSE) in the root directory.
