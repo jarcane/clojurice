@@ -12,7 +12,7 @@ The default configuration expects a running PGSQL server with user/password "pos
 
 ## Instructions
 
-The best way to start a new project is to either clone the repository, or, if you wish to start from a clean slate with git, download the [master .zip](https://github.com/futurice/clojurice/archive/master.zip), extract it locally, and `git init` from there.
+The best way to start a new project is to simply click the "Use this template" button at the top of the Github page. Alternately, if you do not wish to use Github for your project, you can download the [master .zip](https://github.com/futurice/clojurice/archive/master.zip), extract it locally, and `git init` from there.
 
 To start the dev environment do:
 
