@@ -11,6 +11,8 @@
                             [org.clojure/java.jdbc "0.7.12"]
                             [org.clojure/tools.cli "1.0.206"]
                             [org.clojure/tools.logging "1.2.4"]
+                            [org.slf4j/slf4j-api "1.7.35"]
+                            [org.slf4j/slf4j-simple "1.7.35"]
                             [metosin/ring-http-response "0.9.3"]
                             [compojure "1.6.2"]
                             [metosin/compojure-api "1.1.13"]
