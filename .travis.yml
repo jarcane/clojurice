@@ -17,8 +17,9 @@ install:
   - curl -L https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh -o ~/bin/boot
   - chmod +x ~/bin/boot
 env:
-  - BOOT_VERSION=2.8.3
-  - BOOT_CLOJURE_VERSION=1.10.3
+  global:
+    - BOOT_VERSION=2.8.3
+    - BOOT_CLOJURE_VERSION=1.10.3
 jdk:
   - openjdk11
 cache:
