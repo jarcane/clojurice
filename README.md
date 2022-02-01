@@ -8,8 +8,6 @@ An opinionated starter app for full-stack web applications in Clojure
 
 You will need [Boot](https://boot-clj.github.io/) installed, as well as Java 1.8+, and PostgreSQL 9.6+.
 
-The default configuration expects a running PGSQL server with user/password "postgres" containing databases called "app" and "apptest" (for the integration tests), though these settings can be re-configured. See below.
-
 ## Instructions
 
 The best way to start a new project is to simply click the "Use this template" button at the top of the Github page. Alternately, if you do not wish to use Github for your project, you can download the [master .zip](https://github.com/futurice/clojurice/archive/master.zip), extract it locally, and `git init` from there.
