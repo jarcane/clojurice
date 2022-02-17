@@ -15,7 +15,7 @@ The best way to start a new project is to simply click the "Use this template" b
 To start the dev environment do:
 
 ```
-docker-compose &
+docker-compose up &
 boot dev
 ```
 
